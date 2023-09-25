@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Final-Project",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/FbW-E11/Final_Project.git"
+  },
+  "author": "Solomon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FbW-E11/Final_Project/issues"
+  },
+  "homepage": "https://github.com/FbW-E11/Final_Project#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^7.5.2"
+  }
+}
