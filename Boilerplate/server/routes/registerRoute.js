@@ -1,11 +1,11 @@
 import express from "express";
 import { check, validationResult } from "express-validator";
-import Register from "../module/registration.js";
+import Register from "../module/register.js";
 let router = express.Router();
 
 router.post(
   "/",
-  check("fullname").notEmpty().withMessage("fullname is required"),
+  check("fullName").notEmpty().withMessage("fullName is required"),
   check("gender").notEmpty().withMessage("gender is required"),
   check("email").notEmpty().withMessage("email is required"),
   check("phone").notEmpty().withMessage("phone number is required"),
@@ -14,6 +14,8 @@ router.post(
   check("email").isEmail().withMessage("Email is not valid"),
   check("password").notEmpty().withMessage("Password required"),
   check("password").isLength({ min: 5 }).withMessage("not a strong password"),
+  check("address").notEmpty().withMessage("address is required"),
+
   async (req, res) => {
     const error = validationResult(req);
     if (!error.isEmpty()) {
