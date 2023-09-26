@@ -1,7 +1,7 @@
 
 import { Schema, model } from "mongoose";
 
-const workoutSchema = new Schema({
+const registerSchema = new Schema({
   firstname: String,
   lastname: String,
   email: String,
@@ -10,5 +10,5 @@ const workoutSchema = new Schema({
   city :String
 });
 
-const Workout = model("workout", workoutSchema);
-export default Workout;
+const Register = model("register", registerSchema);
+export default Register;
