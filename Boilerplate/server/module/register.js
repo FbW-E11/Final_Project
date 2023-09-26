@@ -2,11 +2,15 @@
 import { Schema, model } from "mongoose";
 
 const registerSchema = new Schema({
-  firstname: String,
-  lastname: String,
+  fullName: String,
+  age : Number,
+  gender: String,
+  phone : Number,
   email: String,
   password: String,
-  city :String
+  city :String,
+  address: String
+
 });
 
 const Register = model("register", registerSchema);
