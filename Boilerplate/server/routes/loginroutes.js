@@ -16,7 +16,7 @@ router.post(
     if (!error.isEmpty()) {
       return res.status(400).json({ error: error.array() });
     }
-    const loginDataCount = await Register.findOne({
+    const loginDataCount = await Register.find({
       email: req.body.email,
       password: req.body.password,
     }).count();

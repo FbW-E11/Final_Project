@@ -9,3 +9,6 @@
 # Adjei Solomon
 
 # Setups
+
+# processing 
+# Fitness App update
