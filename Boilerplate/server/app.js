@@ -1,8 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import loginRoute from "./routes/loginroutes.js";
-import registerRoute from "./routes/registerRoute.js";
+import loginRoute from "./routes/loginRoutes.js";
+import registerRoute from "./routes/workoutRoute.js";
 
 
 const app = express();

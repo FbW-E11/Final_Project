@@ -1,6 +1,6 @@
 import express from "express";
 import { check, validationResult } from "express-validator";
-import Register from "../module/registration.js";
+import Workout from "../module/workout.js";
 let router = express.Router();
 
 router.post(
