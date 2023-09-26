@@ -6,7 +6,6 @@ const registerSchema = new Schema({
   lastname: String,
   email: String,
   password: String,
-  country :String,
   city :String
 });
 
