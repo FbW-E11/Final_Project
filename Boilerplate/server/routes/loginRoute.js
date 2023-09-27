@@ -1,7 +1,6 @@
-
 import express from "express";
 import { check, validationResult } from "express-validator";
-import Register from "../module/register.js";
+import User from "../module/User.js";
 
 let router = express.Router();
 
@@ -12,18 +11,22 @@ router.post(
   check("password").notEmpty().withMessage("Password required"),
   check("password").isLength({ min: 5 }).withMessage("not a strong password"),
   async (req, res) => {
-    const error = validationResult(req);
-    if (!error.isEmpty()) {
-      return res.status(400).json({ error: error.array() });
-    }
-    const loginDataCount = await Register.find({
-      email: req.body.email,
-      password: req.body.password,
-    }).count();
-    if (loginDataCount >= 1) {
-      res.json({ success: true });
-    } else {
-      res.json({ success: false });
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+      }
+      const { email, password } = req.body;
+      console.log(email);
+      const result = await User.find();
+      if (result) {
+        res.json(result);
+      } else {
+        res.json("No User Found");
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal server error" });
     }
   }
 );
