@@ -1,17 +1,17 @@
 
 import express from "express";
-import Login from "../module/User";
+import User from "../module/User";
 import bcrypt from "bcrypt";
 
 // register
 export const userRegister = async (req, res) => {
   try {
-    const { password } = req.bdy;
+    const { password } = req.body;
 
     const salt = bcrypt.genSaltSync(5);
     const hashedPassword = bcrypt.hashSync(password, salt);
 
-    const newLogin = await Login.create({
+    const newUser = await User.create({
       ...req.body,
       password: hashedPassword,
     });
@@ -25,11 +25,11 @@ export const userLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const newLogin = await Login.findOne({
-      email,
+    const newUser = await User.find({
+      email
     });
 
-    if (!user) {
+    if (!User) {
       throw new Error("The user doesn't exist");
       return;
     }
@@ -41,7 +41,7 @@ export const userLogin = async (req, res) => {
       return;
     }
 
-    const token = jwt.sign({ loginId:Login._id }, SECRET_KEY, {
+    const token = jwt.sign({ loginId:User._id }, SECRET_KEY, {
       expiresIn: "1hour",
     });
   } catch (error) {
@@ -50,45 +50,45 @@ export const userLogin = async (req, res) => {
 };
 
 // find the login
-export const getLogin = (req, res) => {
+export const getUser = (req, res) => {
   res.json(req.user);
 };
 
-// Update the login
-export const updateLogin = async (req, res) => {
+// Update the User
+export const updateUser = async (req, res) => {
   try {
-    const updatedLogin = await Login.findByIdAndUpdate(req.login.id, req.body, {
+    const updatedUser = await User.findByIdAndUpdate(req.user.id, req.body, {
       new: true,
     });
 
-    res.json(updateLogin);
+    res.json(updateUser);
   } catch (error) {
     res.json(error.message);
   }
 };
 
-// get all the logins
-export const getAllLogin = async (req, res) => {
+// get all the User
+export const getAllUser = async (req, res) => {
   try {
-    const updatedLogin = await Login.find();
+    const updatedUser = await User.find();
 
-    res.json(getAllLogin);
+    res.json(getUser);
   } catch (error) {
     res.json(error.message);
   }
 };
 
-// delete the login
-export const deletedLogin = async (req, res) => {
+// delete the User
+export const deletedUser = async (req, res) => {
   try {
-    await Login.findByIdAndDelete(req.login._id);
-    res.json("Login has been deleted");
+    await User.findByIdAndDelete(req.login._id);
+    res.json("User has been deleted");
   } catch (error) {
     res.json(error.message);
   }
 };
 
-// logoutLogin
-export const logoutLogin = async (req, res, next) => {
+// logout User
+export const logoutUser = async (req, res, next) => {
   res.json("Goodbye");
 };

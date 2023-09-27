@@ -1,7 +1,7 @@
 
 import express from "express";
 import { check, validationResult } from "express-validator";
-import Register from "../module/User.js";
+import User from "../module/User.js";
 
 let router = express.Router();
 router.post(
@@ -18,7 +18,7 @@ router.post(
       }
       const { email, password } = req.body;
       console.log(email);
-      const result = await Register.find();
+      const result = await User.findOne({email});
       if (result) {
         res.json(result);
       } else {

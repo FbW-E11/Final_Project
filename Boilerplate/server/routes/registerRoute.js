@@ -5,7 +5,7 @@ let router = express.Router();
 
 router.post(
   "/",
-  check("fullname").notEmpty().withMessage("fullname is required"),
+  check("fullName").notEmpty().withMessage("fullname is required"),
   check("gender").notEmpty().withMessage("gender is required"),
   check("email").notEmpty().withMessage("email is required"),
   check("phone").notEmpty().withMessage("phone number is required"),
