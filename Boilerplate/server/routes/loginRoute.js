@@ -16,9 +16,9 @@ router.post(
     if (!error.isEmpty()) {
       return res.status(400).json({ error: error.array() });
     }
-    const loginDataCount = await Register.find({
-      email: req.body.email,
-      password: req.body.password,
+    const loginDataCount = await Register.findOne({
+      email: req.body,
+      password: req.body,
     }).count();
     if (loginDataCount >= 1) {
       res.json({ success: true });
