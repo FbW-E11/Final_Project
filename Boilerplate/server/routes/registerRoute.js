@@ -1,6 +1,6 @@
 import express from "express";
 import { check, validationResult } from "express-validator";
-import Register from "../module/register.js";
+import Register from "../models/register.js";
 let router = express.Router();
 
 router.post(
@@ -21,8 +21,7 @@ router.post(
     if (!error.isEmpty()) {
       return res.status(400).json({ error: error.array() });
     }
-    const loginDataCount = await Register.create(
-   req.body)
+    const loginDataCount = await Register.create(req.body);
     if (loginDataCount) {
       res.json({ success: true });
     } else {

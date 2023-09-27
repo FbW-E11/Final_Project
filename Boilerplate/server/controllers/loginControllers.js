@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 // register
 export const userRegister = async (req, res) => {
   try {
-    const { password } = req.bdy;
+    const { password } = req.body;
 
     const salt = bcrypt.genSaltSync(5);
     const hashedPassword = bcrypt.hashSync(password, salt);
@@ -24,11 +24,10 @@ export const userLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const newLogin = await Login.findOne({
-      email,
-    });
+    const newLogin = await Login.find({
+      email});
 
-    if (!user) {
+    if (!login) {
       throw new Error("The user doesn't exist");
       return;
     }
@@ -50,7 +49,7 @@ export const userLogin = async (req, res) => {
 
 // find the login
 export const getLogin = (req, res) => {
-  res.json(req.user);
+  res.json(req.login);
 };
 
 // Update the login

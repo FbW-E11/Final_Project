@@ -1,7 +1,6 @@
-
 import express from "express";
 import { check, validationResult } from "express-validator";
-import Register from "../module/register.js";
+import Register from "../models/register.js";
 
 let router = express.Router();
 
