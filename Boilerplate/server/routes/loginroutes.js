@@ -1,9 +1,9 @@
+
 import express from "express";
 import { check, validationResult } from "express-validator";
 import User from "../module/User.js";
 
 let router = express.Router();
-
 router.post(
   "/",
   check("email").notEmpty().withMessage("email is required"),
@@ -18,7 +18,7 @@ router.post(
       }
       const { email, password } = req.body;
       console.log(email);
-      const result = await User.find();
+      const result = await User.findOne({email});
       if (result) {
         res.json(result);
       } else {

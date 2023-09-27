@@ -4,7 +4,6 @@ import cors from "cors";
 import loginRoute from "./routes/loginRoute.js";
 import registerRoute from "./routes/registerRoute.js";
 
-
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -13,7 +12,10 @@ app.use("/register", registerRoute);
 
 mongoose
   //.connect("mongodb://localhost:27017/Final-project-DataBase")
-  .connect("mongodb+srv://futureConnect:Future12345@cluster0.lbwroa5.mongodb.net/Final-project-DataBase")
+  .connect(
+    "mongodb+srv://futureConnect:Future12345@cluster0.lbwroa5.mongodb.net/Final-project-DataBase"
+  )
+
   .then(() => {
     console.log("connected");
   })
