@@ -1,16 +1,17 @@
 
 import { Schema, model } from "mongoose";
 
-const registerSchema = new Schema({
-  fullname: String,
+const UserSchema = new Schema({
+  fullName: String,
   age: Number,
   gender : String,
   phone : Number,
   city :String,
+  address :String,
   email: String,
   password: String,
   
 });
 
-const Register = model("register", registerSchema);
-export default Register;
+const User = model("User", UserSchema);
+export default User;

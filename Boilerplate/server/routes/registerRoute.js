@@ -1,6 +1,6 @@
 import express from "express";
 import { check, validationResult } from "express-validator";
-import Register from "../module/registration.js";
+import Register from "../module/User.js";
 let router = express.Router();
 
 router.post(
@@ -10,6 +10,7 @@ router.post(
   check("email").notEmpty().withMessage("email is required"),
   check("phone").notEmpty().withMessage("phone number is required"),
   check("city").notEmpty().withMessage("city is required"),
+  check("address").notEmpty().withMessage("address is required"),
   check("age").notEmpty().withMessage(" your real age required"),
   check("email").isEmail().withMessage("Email is not valid"),
   check("password").notEmpty().withMessage("Password required"),
