@@ -12,9 +12,9 @@ app.use("/register", registerRoute);
 
 mongoose
   //.connect("mongodb://localhost:27017/Final-project-DataBase")
-  .connect(
+   .connect(
     "mongodb+srv://Final-Pj-DB:XIG7hEPj5KDpGELN@cluster0.meb2lvg.mongodb.net/FutureConnect-DB"
-  )
+  ) 
 
   .then(() => {
     console.log("connected");
