@@ -10,16 +10,15 @@ app.use(express.json());
 app.use(cors());
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
-
 mongoose
-  .connect("mongodb+srv://futureConnect:Future12345@cluster0.lbwroa5.mongodb.net/Final-project-DataBase")
+  .connect("mongodb+srv://Final-Pj-DB:XIG7hEPj5KDpGELN@cluster0.meb2lvg.mongodb.net/FutureConnect-DB")
   .then(() => {
     console.log("connected");
+  
   })
   .catch((err) => {
     console.log("error", err);
   });
-
 app.listen(5001, (req, res) => {
   console.log("listening on port 5001");
 });

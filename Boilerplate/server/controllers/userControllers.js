@@ -1,6 +1,6 @@
 
 import express from "express";
-import User from "../module/User";
+import User from "../model/User";
 import bcrypt from "bcrypt";
 
 // register

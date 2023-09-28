@@ -1,7 +1,7 @@
 
 import express from "express";
 import { check, validationResult } from "express-validator";
-import User from "../module/User.js";
+import User from "../model/User.js";
 
 let router = express.Router();
 router.post(
