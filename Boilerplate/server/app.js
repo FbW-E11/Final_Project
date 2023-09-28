@@ -11,12 +11,7 @@ app.use("/login", loginRoute);
 app.use("/register", registerRoute);
 
 mongoose
-<<<<<<< HEAD
-  //.connect("mongodb://localhost:27017/Final-project-DataBase")
-  .connect("mongodb+srv://futureConnect:Future12345@cluster0.lbwroa5.mongodb.net/Final-project-DataBase")
-=======
   .connect("mongodb+srv://Fazan_786:1234@fazandci.yj4w2nz.mongodb.net/Final")
->>>>>>> 196cf2e18f2e433adfb7786e42f77393f614c668
   .then(() => {
     console.log("connected");
   })
