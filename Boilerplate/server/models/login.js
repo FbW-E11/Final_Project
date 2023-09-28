@@ -10,3 +10,4 @@ const loginSchema = new Schema({
 
 const Login = model("login", loginSchema);
 export default Login;
+
