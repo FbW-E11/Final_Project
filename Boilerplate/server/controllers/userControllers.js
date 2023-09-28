@@ -1,4 +1,3 @@
-
 import express from "express";
 import User from "../model/User";
 import bcrypt from "bcrypt";
@@ -26,7 +25,7 @@ export const userLogin = async (req, res) => {
     const { email, password } = req.body;
 
     const newUser = await User.find({
-      email
+      email,
     });
 
     if (!User) {
@@ -41,7 +40,7 @@ export const userLogin = async (req, res) => {
       return;
     }
 
-    const token = jwt.sign({ loginId:User._id }, SECRET_KEY, {
+    const token = jwt.sign({ loginId: User._id }, SECRET_KEY, {
       expiresIn: "1hour",
     });
   } catch (error) {
