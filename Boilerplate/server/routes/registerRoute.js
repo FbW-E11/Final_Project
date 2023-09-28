@@ -1,5 +1,6 @@
 import express from "express";
 import { check, validationResult } from "express-validator";
+
 import bcrypt from "bcrypt";
 import Register from "../module/User.js";
 
