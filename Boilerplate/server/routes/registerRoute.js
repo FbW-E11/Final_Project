@@ -1,9 +1,7 @@
 import express from "express";
 import { check, validationResult } from "express-validator";
-
 import bcrypt from "bcrypt";
-import Register from "../models/User.js";
-
+import Register from "../model/User.js";
 let router = express.Router();
 
 router.post(
