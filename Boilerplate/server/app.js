@@ -9,7 +9,6 @@ app.use(express.json());
 app.use(cors());
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
-
 mongoose
   //.connect("mongodb://localhost:27017/Final-project-DataBase")
   .connect(
@@ -18,11 +17,11 @@ mongoose
 
   .then(() => {
     console.log("connected");
+  
   })
   .catch((err) => {
     console.log("error", err);
   });
-
 app.listen(5001, (req, res) => {
   console.log("listening on port 5001");
 });
