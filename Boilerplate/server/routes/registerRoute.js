@@ -2,7 +2,7 @@ import express from "express";
 import { check, validationResult } from "express-validator";
 
 import bcrypt from "bcrypt";
-import Register from "../module/User.js";
+import User from "../models/User.js";
 
 let router = express.Router();
 
@@ -34,7 +34,7 @@ router.post(
       const hashedPassword = await bcrypt.hash(password, 10);
 
       // Create a new user with the hashed password
-      const newUser = new Register({
+      const newUser = new User({
         fullName,
         gender,
         email,
