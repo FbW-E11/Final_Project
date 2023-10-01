@@ -17,15 +17,11 @@ router.post(
         return res.status(400).json({ errors: errors.array() });
       }
       const { email, password } = req.body;
-
-      // Search for a user with the provided email and password
       const user = await User.findOne({ email, password });
 
       if (user) {
-        // If a user is found, return their details
         res.json(user);
       } else {
-        // If no user is found, return "No User Found"
         res.json("No User Found");
       }
     } catch (error) {
