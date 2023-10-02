@@ -24,10 +24,7 @@ const WorkoutSchema = new mongoose.Schema({
     type: String,
     enum: ["Male", "Female"],
   },
-  characteristics: {
-    Male: characteristicsSchema,
-    Female: characteristicsSchema,
-  },
+  characteristics: characteristicsSchema,
 });
 
 const Workout = mongoose.model("Workout", WorkoutSchema);

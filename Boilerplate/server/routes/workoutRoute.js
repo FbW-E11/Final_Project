@@ -1,7 +1,6 @@
 import express from "express";
 import { check, validationResult } from "express-validator";
 import Workout from "../model/workout.js";
-
 const router = express.Router();
 
 // Create a new workout

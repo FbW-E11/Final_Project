@@ -1,7 +1,7 @@
 import express from "express";
 import { check, validationResult } from "express-validator";
 import bcrypt from "bcrypt";
-import User from "../models/User.js";
+import User from "../model/User.js";
 
 let router = express.Router();
 
@@ -102,21 +102,18 @@ router.put(
     }
   }
 );
-/*
+
 // Delete user by ID
 router.delete("/:id", async (req, res) => {
   const userId = req.params.id;
 
   try {
-    // Find the user by ID
-    const user = await Register.findById(userId);
+    //Find the user by ID
+    const user = await User.findByIdAndDelete(userId);
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-
-    // Perform the delete operation
-    await user.remove();
 
     res.json({ success: true, message: "User deleted" });
   } catch (error) {
@@ -124,7 +121,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 });
-
-*/
 
 export default router;
