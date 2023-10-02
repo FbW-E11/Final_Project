@@ -26,4 +26,5 @@ mongoose
   });
 app.listen(5001, (req, res) => {
   console.log("listening on port 5001");
+  console.log("listening on port 5001");
 });
