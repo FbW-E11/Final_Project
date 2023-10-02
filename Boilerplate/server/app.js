@@ -13,15 +13,10 @@ app.use("/register", registerRoute);
 app.use("/workout", workoutRoute);
 
 mongoose
-<<<<<<< HEAD
-
-  .connect(
-=======
   //.connect("mongodb://localhost:27017/Final-project-DataBase")
-   .connect(
->>>>>>> e1af573930156d924a0a7e7a5e565dc59a27aff1
+  .connect(
     "mongodb+srv://Final-Pj-DB:XIG7hEPj5KDpGELN@cluster0.meb2lvg.mongodb.net/FutureConnect-DB"
-  ) 
+  )
 
   .then(() => {
     console.log("connected");
