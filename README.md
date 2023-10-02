@@ -1,17 +1,13 @@
 # Final_Project
 
-# Mohamed Fazan
+#server
 
-# Rodrigue TJANI
+##npm install express mongoose express validator nodemon
 
-# Roxana Maria
+#model with 2 files
 
-# Adjei Solomon
+#routes with 3 files
 
-# Setups
+#Database
 
-# processing
-
-# Fitness App update
-
-# TEST
+#client
