@@ -1,4 +1,6 @@
 import { Workout } from "../model/workout.js";
+
+
 const getWorkouts = async (req, res) => {
   try {
     // We need to get  workouts from our local database or fetch from a Fitness Api
