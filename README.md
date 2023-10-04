@@ -8,6 +8,12 @@
 
 #routes with 3 files
 
+
 #Database
 
 #client
+
+# Setups
+
+# 
+
