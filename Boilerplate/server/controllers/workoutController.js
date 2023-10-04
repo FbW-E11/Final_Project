@@ -2,18 +2,15 @@ import axios from 'axios';
 import { Workout } from '../model/workout.js';
 
 const FITBIT_API_URL = 'https://api.fitbit.com/2.0';
-
 // Fitbit API credentials
 const FITBIT_CLIENT_ID = 'your-fitbit-client-id';
 const FITBIT_CLIENT_SECRET = 'your-fitbit-client-secret';
 const FITBIT_ACCESS_TOKEN = 'your-fitbit-access-token'; // You'll get this after the user authenticates
-
 const getFitbitData = async (path, accessToken) => {
   const url = `${FITBIT_API_URL}${path}`;
   const headers = {
     Authorization: `Bearer ${accessToken}`,
   };
-
   try {
     const response = await axios.get(url, { headers });
     return response.data;
