@@ -1,4 +1,4 @@
-import { Workout } from "../model/Workout.js";
+import Workout from "../model/Workout.js";
 
 const getWorkouts = async (req, res) => {
   try {
