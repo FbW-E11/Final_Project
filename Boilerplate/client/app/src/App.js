@@ -1,13 +1,13 @@
-import { useEffect } from "react";
+//import { useEffect } from "react";
 import { useState } from "react";
 import "./App.css";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from "./components/Login/index";
+import Register from "./components/Register/index";
 import axios from "axios";
 import { ColorRing } from "react-loader-spinner";
 function App() {
-  const [user, setUser] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   /*useEffect(() => {
    const getUser = async () => {
       const res = await axios.get("https://api.fitbit.com/2.0", { withCredentials: true });
@@ -25,10 +25,10 @@ function App() {
 
   }, []); */
 
-  useEffect(() => {
+  /* useEffect(() => {
     fetch("http://localhost:5001/workout", {
       method: "post",
-      body: JSON.stringify(data),
+      body: JSON.stringify(),
       headers: {
         "Content-Type": "application/json",
       },
@@ -40,7 +40,7 @@ function App() {
         console.log("data is:", data);
         setUser(data);
       });
-  }, []);
+  }, []); */
 
   const logoutUser = async () => {
     const res = await axios.get("user/logout", { withCredentials: true });

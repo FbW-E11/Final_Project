@@ -5,7 +5,7 @@ const Register = () => {
   const [message, setMessage] = useState(null);
   const SignUpUser = async (data) => {
     try {
-      const response = await API.post(`/register`, data);
+      const response = await API.post(`/user/register`, data);
       return response;
     } catch (error) {
       return error;
@@ -17,8 +17,6 @@ const Register = () => {
     reset,
     formState: { errors },
   } = useForm();
-  console.error(errors)
-
   const onSubmit = async (data) => {
     console.log(data);
     const res = await SignUpUser(data);
