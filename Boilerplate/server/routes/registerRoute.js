@@ -55,6 +55,27 @@ router.post(
   }
 );
 
+// Get all Users
+router.get("/:id", async (req, res) => {
+  const userId = req.params.id;
+  try {
+    // Find the user by ID
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Return user information
+    res.json({ success: true, user });
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ success: false, message: "Internal server error" });
+  }
+});
+
 // Update user information by ID
 router.put(
   "/:id",
