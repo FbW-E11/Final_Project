@@ -12,6 +12,7 @@ app.use("/login", loginRoute);
 app.use("/register", registerRoute);
 app.use("/workout", workoutRoute);
 
+// app.get('/test', (req, res) => res.send('hello there'))
 mongoose
   //.connect("mongodb://localhost:27017/Final-project-DataBase")
   .connect(

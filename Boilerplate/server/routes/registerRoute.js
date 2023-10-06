@@ -7,24 +7,24 @@ let router = express.Router();
 
 router.post(
   "/",
-  check("fullName").notEmpty().withMessage("Full Name is required"),
-  check("gender").notEmpty().withMessage("Gender is required"),
-  check("email").notEmpty().withMessage("Email is required"),
-  check("phone").notEmpty().withMessage("Phone number is required"),
-  check("city").notEmpty().withMessage("City is required"),
-  check("address").notEmpty().withMessage("Address is required"),
-  check("age").notEmpty().withMessage("Your real age is required"),
-  check("email").isEmail().withMessage("Email is not valid"),
-  check("password").notEmpty().withMessage("Password is required"),
-  check("password").isLength({ min: 5 }).withMessage("Not a strong password"),
-  check("address").notEmpty().withMessage("Address is required"),
+  // check("fullName").notEmpty().withMessage("Full Name is required"),
+  // check("gender").notEmpty().withMessage("Gender is required"),
+  // check("email").notEmpty().withMessage("Email is required"),
+  // check("phone").notEmpty().withMessage("Phone number is required"),
+  // check("city").notEmpty().withMessage("City is required"),
+  // check("address").notEmpty().withMessage("Address is required"),
+  // check("age").notEmpty().withMessage("Your real age is required"),
+  // check("email").isEmail().withMessage("Email is not valid"),
+  // check("password").notEmpty().withMessage("Password is required"),
+  // check("password").isLength({ min: 5 }).withMessage("Not a strong password"),
+  // check("address").notEmpty().withMessage("Address is required"),
 
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-
+    console.log("/register: body is", req.body);
     const { fullName, gender, email, phone, city, address, age, password } =
       req.body;
 
@@ -70,9 +70,7 @@ router.get("/:id", async (req, res) => {
     res.json({ success: true, user });
   } catch (error) {
     console.error(error);
-    res
-      .status(500)
-      .json({ success: false, message: "Internal server error" });
+    res.status(500).json({ success: false, message: "Internal server error" });
   }
 });
 

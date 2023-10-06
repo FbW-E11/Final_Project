@@ -8,39 +8,7 @@ import { ColorRing } from "react-loader-spinner";
 function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  /*useEffect(() => {
-   const getUser = async () => {
-      const res = await axios.get("https://api.fitbit.com/2.0", { withCredentials: true });
-      if (res.data._id) {
-        setUser(res.data);
-        setIsLoading(false);
-      } else {
-        setUser(null);
-        setIsLoading(false);
-      }
-    };
-    getUser();
 
-
-
-  }, []); */
-
-  /* useEffect(() => {
-    fetch("http://localhost:5001/workout", {
-      method: "post",
-      body: JSON.stringify(),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log("data is:", data);
-        setUser(data);
-      });
-  }, []); */
 
   const logoutUser = async () => {
     const res = await axios.get("user/logout", { withCredentials: true });
@@ -76,7 +44,7 @@ function App() {
           ) : (
             <div className="app-container">
               <Register />
-              {<Login user={user} setUser={setUser} />}
+              <Login user={user} setUser={setUser} /> 
             </div>
           )}
         </>

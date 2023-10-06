@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import API from "../api";
+import axios from 'axios';
+
 const Register = () => {
   const [message, setMessage] = useState(null);
   const SignUpUser = async (data) => {
     try {
-      const response = await API.post(`/user/register`, data);
-      return response;
+      const response = await axios.post(`http://localhost:5001/register`, data);
+      console.log('response from register is', response)
+      return response
     } catch (error) {
-      return error;
+      console.log(error.message);
     }
   };
   const {
@@ -38,18 +40,14 @@ const Register = () => {
             <input
               type="text"
               placeholder="username"
-              {...register("username", {})}
+              {...register("username")}
             />
           </div>
           <div className="form-group">
             <label className="form-label" htmlFor="username">
               Email:
             </label>
-            <input
-              type="email"
-              placeholder="email"
-              {...register("email", {})}
-            />
+            <input type="email" placeholder="email" {...register("email")} />
           </div>
           <div className="form-group">
             <label className="form-label" htmlFor="password">
@@ -58,7 +56,7 @@ const Register = () => {
             <input
               type="password"
               placeholder="password"
-              {...register("password", {})}
+              {...register("password")}
             />
           </div>
           <button className="submit-button" type="submit">

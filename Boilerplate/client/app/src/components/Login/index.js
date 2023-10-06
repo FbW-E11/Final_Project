@@ -1,21 +1,25 @@
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import API from "../api";
+
 const Login = ({user, setUser}) => {
 console.log(user)
+
     const loginUser = async (data) => {
         try {
-            const response = await API.post(`/user/login`,  data ,  { withCredentials: true } )
+            const response = await axios.post(`/login`,  data ,  { withCredentials: true } )
           return response;
         } catch (error) {
           return error;
         }
       };
+      
     const { register, handleSubmit, formState: { errors } } = useForm();
+
     const onSubmit = async (data) =>{
        console.log(data);
       const res = await loginUser(data)
-       console.log(res)
-       if (res.data.username) {
+       
+       if (res.data) {
         setUser(res.data)
        }
       }
@@ -26,7 +30,7 @@ console.log(user)
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
           <label className="form-label" htmlFor="username">
-            Email:
+            Email: test
           </label>
           <input type="email" placeholder="email" {...register("email", {})} />
         </div>
