@@ -1,6 +1,6 @@
 import express from "express";
 import { check, validationResult } from "express-validator";
-import Workout from "../model/User.js";
+
 const router = express.Router();
 
 // Create a new workout
@@ -94,34 +94,3 @@ router.delete("/:id", async (req, res) => {
 
 export default router;
 
-/*
-
-*Create a New Workout (POST Request):
-
-{
-  "gender": "Male",
-  "characteristics": {
-    "weight": 180,
-    "height": 72,
-    "muscleType": "Mesomorph",
-    "dietHabits": "Omnivore",
-    "sleepingHabits": "normal"
-  }
-}
-
-
-*Update a Workout by ID (PUT Request):
-
-
-{
-  "gender": "Female",
-  "characteristics": {
-    "weight": 150,
-    "height": 65,
-    "muscleType": "Ectomorph",
-    "dietHabits": "Vegan",
-    "sleepingHabits": "midday break"
-  }
-}
-
-*/

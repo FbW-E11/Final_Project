@@ -13,6 +13,7 @@ export const userRegister = async (req, res) => {
     const newUser = await User.create({
       ...req.body,
       password: hashedPassword,
+      s,
     });
   } catch (error) {
     res.json(error);
@@ -28,7 +29,7 @@ export const userLogin = async (req, res) => {
       email,
     });
 
-    if (!User) {
+    if (!user) {
       throw new Error("The user doesn't exist");
       return;
     }
