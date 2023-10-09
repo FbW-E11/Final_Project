@@ -13,6 +13,7 @@ export const userRegister = async (req, res) => {
     const newUser = await User.create({
       ...req.body,
       password: hashedPassword,
+      s,
     });
   } catch (error) {
     res.json(error);
