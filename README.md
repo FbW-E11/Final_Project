@@ -80,3 +80,23 @@ export { getWorkouts, createWorkout };
 
 
 NOT A tEST AGAIN
+
+
+
+
+*****************************************
+{
+    description : String,
+    images : []
+    videoLink : String,  ("https://www.youtube.com/embed/2Z9g-AZinUc?si=kUOd_dRcJduPm-gK")
+    duration : String,
+    muscleType : [],
+    SetNumber : Number
+
+}
+
+
+// users Schema
+{
+  savedWorkouts : ref : "Workout"
+}
