@@ -9,7 +9,6 @@ function App() {
   const [user, setUser] = useState(null);
   //const [isLoading, setIsLoading] = useState(false);
 
-
   const logoutUser = async () => {
     const res = await axios.get("user/logout", { withCredentials: true });
     if (res.data === "Bye bye") {
@@ -19,7 +18,7 @@ function App() {
   return (
     <div>
       {/* {false? ( */}
-        {/* <ColorRing
+      {/* <ColorRing
           visible={true}
           height="80"
           width="80"
@@ -29,29 +28,27 @@ function App() {
           colors={["#E15B64", "#F47E60", "#F8B26A", "#ABBD81", "#849B87"]}
         /> */}
       {/* ) : ( */}
-        <>
-          {" "}
-          {user ? (
-            <>
-              {" "}
-              <h2>Welcome {user.username}</h2>
-             
-              {" "}
-            </>
-          ) : (
-            <div className="app-container">
-           {/*    <Register /> */}
-              <Login user={user} setUser={setUser} /> 
+      <>
+        {" "}
+        {user ? (
+          <>
+            {" "}
+            <h2>Welcome {user.username}</h2>{" "}
+          </>
+        ) : (
+          <div className="app-container">
+            {/*    <Register /> */}
+            <Login user={user} setUser={setUser} />
 
-              <div>
-                <button className="logout-button" onClick={<Register/>}>
-                  Register
-                </button>
-              </div>
+            <div>
+              <button className="logout-button" onClick={<Register />}>
+                Register
+              </button>
             </div>
-          )}
-        </>
-     {/*  )} */}
+          </div>
+        )}
+      </>
+      {/*  )} */}
     </div>
   );
 }
