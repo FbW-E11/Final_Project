@@ -1,9 +1,21 @@
 
 
+/* 
 import mongoose from "mongoose";
 
-// Define characteristicsSchema first
-const characteristicsSchema = new mongoose.Schema({
+const WorkoutSchema = new mongoose.Schema({
+    gender: {
+      type: String,
+      enum: ['Male', 'Female']
+    },
+    characteristics: {
+      Male: characteristicsSchema,
+      Female: characteristicsSchema
+    }
+  });
+  
+  
+  const characteristicsSchema = new mongoose.Schema({
   weight: Number,
   height: Number,
   muscleType: {
@@ -21,11 +33,23 @@ const characteristicsSchema = new mongoose.Schema({
 });
 
 // Define WorkoutSchema using characteristicsSchema
-const WorkoutSchema = new mongoose.Schema({
+const WorkoutSchema = new Schema({
   gender: {
     type: String,
     enum: ["Male", "Female"],
   },
+  characteristics: {
+    Male: characteristicsSchema,
+    Female: characteristicsSchema,
+  },
+});
+
+const Workout = model("Workout", WorkoutSchema);
+
+export default Workout;
+
+
+
   characteristics: characteristicsSchema,
 });
 
@@ -33,4 +57,15 @@ const Workout = mongoose.model("Workout", WorkoutSchema);
 
 export default Workout;
 
+
+
+  characteristics: {
+    Male: characteristicsSchema,
+    Female: characteristicsSchema,
+  },
+});
+
+const Workout = model("Workout", WorkoutSchema);
+
+export default Workout;
 
