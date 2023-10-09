@@ -1,3 +1,5 @@
+
+
 /* 
 import mongoose from "mongoose";
 
@@ -47,34 +49,16 @@ const Workout = model("Workout", WorkoutSchema);
 export default Workout;
 
 
- */
 
-import { Schema, model } from "mongoose";
-
-// Define characteristicsSchema first
-const characteristicsSchema = new Schema({
-  weight: Number,
-  height: Number,
-  muscleType: {
-    type: String,
-    enum: ["Endomorph", "Mesomorph", "Ectomorph"],
-  },
-  dietHabits: {
-    type: String,
-    enum: ["Omnivore", "Vegetarian", "Vegan"],
-  },
-  sleepingHabits: {
-    type: String,
-    enum: ["normal", "midday break", "irregular"],
-  },
+  characteristics: characteristicsSchema,
 });
 
-// Define WorkoutSchema using characteristicsSchema
-const WorkoutSchema = new Schema({
-  gender: {
-    type: String,
-    enum: ["Male", "Female"],
-  },
+const Workout = mongoose.model("Workout", WorkoutSchema);
+
+export default Workout;
+
+
+
   characteristics: {
     Male: characteristicsSchema,
     Female: characteristicsSchema,
@@ -84,3 +68,4 @@ const WorkoutSchema = new Schema({
 const Workout = model("Workout", WorkoutSchema);
 
 export default Workout;
+
