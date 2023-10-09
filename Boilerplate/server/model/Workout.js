@@ -1,5 +1,3 @@
-
-
 import mongoose from "mongoose";
 
 // Define characteristicsSchema first
@@ -21,15 +19,18 @@ const characteristicsSchema = new mongoose.Schema({
 });
 
 // Define WorkoutSchema using characteristicsSchema
-const WorkoutSchema = new mongoose.Schema({
+const WorkoutSchema = new Schema({
   gender: {
     type: String,
     enum: ["Male", "Female"],
   },
-  characteristics: characteristicsSchema,
+  characteristics: {
+    Male: characteristicsSchema,
+    Female: characteristicsSchema
+  }
 });
 
-const Workout = mongoose.model("Workout", WorkoutSchema);
+const Workout = model("Workout", WorkoutSchema);
 
 export default Workout;
 
