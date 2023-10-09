@@ -1,8 +1,15 @@
 import { Schema, model } from "mongoose";
+
+
 // Define characteristicsSchema first
 const characteristicsSchema = new Schema({
   weight: Number,
   height: Number,
+  description: String,
+  images: [],
+  videoLink: String,
+  duration: String,
+  SetNumber: Number,
   muscleType: {
     type: String,
     enum: ['Endomorph', 'Mesomorph', 'Ectomorph']
@@ -29,16 +36,6 @@ const WorkoutSchema = new Schema({
 });
 const Workout = model('Workout', WorkoutSchema);
 export default Workout;
-
-
-
-
-
-
-
-
-
-
 
 
 

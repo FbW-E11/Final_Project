@@ -1,45 +1,17 @@
-import { useState } from "react";
+
 import "./App.css";
-import Login from "./components/Login/index";
 import Register from "./components/Register/index";
-import axios from "axios";
+
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [showRegister, setShowRegister] = useState(false)
-
-  const logoutUser = async () => {
-    const res = await axios.get("user/logout", { withCredentials: true });
-    if (res.data === "Bye bye") {
-      setUser(null);
-    }
-  };
   return (
-    <div>
-      <>
-        {" "}
-        {user ? (
-          <>
-            {" "}
-            <h2>Welcome {user.username}</h2>{" "}
-          </>
-        ) : (
-          <div className="app-container">
-            <Login user={user} setUser={setUser} />
-            {showRegister ? (
-              <Register />
-            ) : (
 
-            <div>
-              <button className="logout-button" onClick={() => setShowRegister(true)}>
-                Register
-              </button>
-            </div>
-        )}
-          </div>
-        )}
-      </>
-    </div>
+    <Routes>
+      <Route path="/register" element={<Register />}></Route>
+      <Route path="/" element={<Home />}></Route>
+    </Routes>
+
   );
 }
+
 export default App;
