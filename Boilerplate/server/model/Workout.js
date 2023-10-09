@@ -1,6 +1,4 @@
 
-
-/* 
 import mongoose from "mongoose";
 
 const WorkoutSchema = new mongoose.Schema({
@@ -32,7 +30,7 @@ const WorkoutSchema = new mongoose.Schema({
   },
 });
 
-// Define WorkoutSchema using characteristicsSchema
+/* Define WorkoutSchema using characteristicsSchema
 const WorkoutSchema = new Schema({
   gender: {
     type: String,
@@ -66,6 +64,7 @@ export default Workout;
 });
 
 const Workout = model("Workout", WorkoutSchema);
-
+*/
 export default Workout;
+
 
