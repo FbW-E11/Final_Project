@@ -12,6 +12,7 @@ app.use("/login", loginRoute);
 app.use("/register", registerRoute);
 app.use("/workout", workoutRoute);
 
+// app.get('/test', (req, res) => res.send('hello there'))
 mongoose
   //.connect("mongodb://localhost:27017/Final-project-DataBase")
   .connect(
@@ -24,6 +25,6 @@ mongoose
   .catch((err) => {
     console.log("error", err);
   });
-app.listen(5001, (req, res) => {
-  console.log("listening on port 5001");
+app.listen(5002, (req, res) => {
+  console.log("listening on port 5002");
 });
