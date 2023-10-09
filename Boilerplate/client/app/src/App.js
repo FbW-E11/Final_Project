@@ -4,10 +4,10 @@ import "./App.css";
 import Login from "./components/Login/index";
 import Register from "./components/Register/index";
 import axios from "axios";
-import { ColorRing } from "react-loader-spinner";
+//import { ColorRing } from "react-loader-spinner";
 function App() {
   const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  //const [isLoading, setIsLoading] = useState(false);
 
 
   const logoutUser = async () => {
@@ -18,8 +18,8 @@ function App() {
   };
   return (
     <div>
-      {isLoading ? (
-        <ColorRing
+      {/* {false? ( */}
+        {/* <ColorRing
           visible={true}
           height="80"
           width="80"
@@ -27,28 +27,31 @@ function App() {
           wrapperStyle={{}}
           wrapperClass="blocks-wrapper"
           colors={["#E15B64", "#F47E60", "#F8B26A", "#ABBD81", "#849B87"]}
-        />
-      ) : (
+        /> */}
+      {/* ) : ( */}
         <>
           {" "}
           {user ? (
             <>
               {" "}
               <h2>Welcome {user.username}</h2>
-              <div>
-                <button className="logout-button" onClick={logoutUser}>
-                  Logout
-                </button>
-              </div>{" "}
+             
+              {" "}
             </>
           ) : (
             <div className="app-container">
-              <Register />
+           {/*    <Register /> */}
               <Login user={user} setUser={setUser} /> 
+
+              <div>
+                <button className="logout-button" onClick={<Register/>}>
+                  Register
+                </button>
+              </div>
             </div>
           )}
         </>
-      )}
+     {/*  )} */}
     </div>
   );
 }

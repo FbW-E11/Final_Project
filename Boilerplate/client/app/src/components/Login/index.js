@@ -30,7 +30,7 @@ console.log(user)
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
           <label className="form-label" htmlFor="username">
-            Email: test
+            Email: 
           </label>
           <input type="email" placeholder="email" {...register("email", {})} />
         </div>

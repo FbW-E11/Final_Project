@@ -33,22 +33,81 @@ const Register = () => {
       <div className="registration-container">
         <h2 className="registration-title">Register</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
+          
           <div className="form-group">
-            <label className="form-label" htmlFor="username">
-              username:
+            <label className="form-label" htmlFor="fullName">
+              FullName:
             </label>
             <input
               type="text"
-              placeholder="username"
-              {...register("username")}
+              placeholder="fullName"
+              {...register("fullName")}
             />
           </div>
+
           <div className="form-group">
-            <label className="form-label" htmlFor="username">
+            <label className="form-label" htmlFor="age">
+              Age:
+            </label>
+            <input type="age" 
+            placeholder="age" {...register("age")} />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label" htmlFor="gender">
+              Gender:
+            </label>
+            <input
+              type="gender"
+              placeholder="gender"
+              {...register("gender")}
+            />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label" htmlFor="phone">
+             Phone:
+            </label>
+            <input
+              type="phone"
+              placeholder="phone"
+              {...register("phone")}
+            />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label" htmlFor="city">
+              City:
+            </label>
+            <input
+              type="city"
+              placeholder="city"
+              {...register("city")}
+            />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label" htmlFor="address">
+             Address:
+            </label>
+            <input
+              type="address"
+              placeholder="address"
+              {...register("address")}
+            />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label" htmlFor="email">
               Email:
             </label>
-            <input type="email" placeholder="email" {...register("email")} />
+            <input
+              type="email"
+              placeholder="email"
+              {...register("email")}
+            />
           </div>
+
           <div className="form-group">
             <label className="form-label" htmlFor="password">
               Password:
@@ -59,6 +118,7 @@ const Register = () => {
               {...register("password")}
             />
           </div>
+
           <button className="submit-button" type="submit">
             Register
           </button>
