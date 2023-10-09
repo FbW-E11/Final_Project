@@ -1,3 +1,5 @@
+
+
 import mongoose from "mongoose";
 
 // Define characteristicsSchema first
@@ -30,3 +32,5 @@ const WorkoutSchema = new mongoose.Schema({
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
 export default Workout;
+
+
