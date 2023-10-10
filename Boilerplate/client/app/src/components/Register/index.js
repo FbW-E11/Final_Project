@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import {Button,FormLabel,Input,TextField} from '@mui/material';
 
-const Register = () => {
+ const Register = () => {
+  const navigate = useNavigate();
   const [message, setMessage] = useState(null);
   const SignUpUser = async (data) => {
     try {
@@ -24,86 +27,40 @@ const Register = () => {
     const res = await SignUpUser(data);
     console.log("res", res);
     reset();
-    if (res.data.username) {
-      setMessage("You successfully signed up");
+    if (res.data.success) {
+          navigate("/")
     }
   };
   return (
     <div className="join">
       <div className="registration-container">
-        <h2 className="registration-title">Register</h2>
+        <h2 className="registration-title"> Register if you are not a member</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
-            <label className="form-label" htmlFor="fullName">
-              FullName:
-            </label>
-            <input
-              type="text"
-              placeholder="fullName"
-              {...register("fullName")}
-            />
+            <TextField id="filled-basic"  variant="filled"placeholder="Full Name"{...register("fullName",{required:true})} />
           </div>
-
           <div className="form-group">
-            <label className="form-label" htmlFor="age">
-              Age:
-            </label>
-            <input type="age" placeholder="age" {...register("age")} />
+            <TextField id="filled-basic"  variant="filled"placeholder="Age"{...register("Age",{required:true})} />
           </div>
-
           <div className="form-group">
-            <label className="form-label" htmlFor="gender">
-              Gender:
-            </label>
-            <input type="gender" placeholder="gender" {...register("gender")} />
+            <TextField id="filled-basic"  variant="filled"placeholder="Gender"{...register("Gender",{required:true})} />
           </div>
-
           <div className="form-group">
-            <label className="form-label" htmlFor="phone">
-              Phone:
-            </label>
-            <input type="phone" placeholder="phone" {...register("phone")} />
+            <TextField id="filled-basic"  variant="filled"placeholder="Phone"{...register("Phone",{required:true})} />
           </div>
-
           <div className="form-group">
-            <label className="form-label" htmlFor="city">
-              City:
-            </label>
-            <input type="city" placeholder="city" {...register("city")} />
+            <TextField id="filled-basic"  variant="filled"placeholder="City"{...register("City",{required:true})} />
           </div>
-
           <div className="form-group">
-            <label className="form-label" htmlFor="address">
-              Address:
-            </label>
-            <input
-              type="address"
-              placeholder="address"
-              {...register("address")}
-            />
+            <TextField id="filled-basic"  variant="filled"placeholder="Address"{...register("Address",{required:true})} />
           </div>
-
           <div className="form-group">
-            <label className="form-label" htmlFor="email">
-              Email:
-            </label>
-            <input type="email" placeholder="email" {...register("email")} />
+            <TextField id="filled-basic"  variant="filled"placeholder="Email"{...register("Email",{required:true})} />
           </div>
-
           <div className="form-group">
-            <label className="form-label" htmlFor="password">
-              Password:
-            </label>
-            <input
-              type="password"
-              placeholder="password"
-              {...register("password")}
-            />
+            <TextField id="filled-basic"  variant="filled"placeholder="Password"{...register("Password",{required:true,min:8})} />
           </div>
-
-          <button className="submit-button" type="submit">
-            Register
-          </button>
+          <Button variant="contained" type="submit">SignUp</Button>
         </form>
         <h2>{message && message}</h2>
       </div>
