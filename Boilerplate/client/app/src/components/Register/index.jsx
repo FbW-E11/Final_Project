@@ -6,7 +6,7 @@ const Register = () => {
   const [message, setMessage] = useState(null);
   const SignUpUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5001/register`, data);
+      const response = await axios.post(`http://localhost:5003/register`, data);
       console.log('response from register is', response)
       return response
     } catch (error) {

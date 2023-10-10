@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import Login from "../Login/index.js";
+
 
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Login from "../Login/index.jsx";
 
 function Home() {
   const [user, setUser] = useState(null);
