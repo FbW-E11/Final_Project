@@ -1,9 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Login from "../Login/index.js";
-
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 function Home() {
   const [user, setUser] = useState(null);
@@ -27,9 +25,7 @@ function Home() {
         <div className="app-container">
           <Login user={user} setUser={setUser} />
 
-          <Link to="/register" className="register-button">
-            Register
-          </Link>
+          
         </div>
       )}
     </div>
@@ -37,3 +33,5 @@ function Home() {
 }
 
 export default Home;
+
+
