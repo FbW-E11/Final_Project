@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from 'axios';
+import axios from "axios";
 
 const Register = () => {
   const [message, setMessage] = useState(null);
   const SignUpUser = async (data) => {
     try {
       const response = await axios.post(`http://localhost:5001/register`, data);
-      console.log('response from register is', response)
-      return response
+      console.log("response from register is", response);
+      return response;
     } catch (error) {
       console.log(error.message);
     }
@@ -33,7 +33,6 @@ const Register = () => {
       <div className="registration-container">
         <h2 className="registration-title">Register</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
-          
           <div className="form-group">
             <label className="form-label" htmlFor="fullName">
               FullName:
@@ -49,46 +48,33 @@ const Register = () => {
             <label className="form-label" htmlFor="age">
               Age:
             </label>
-            <input type="age" 
-            placeholder="age" {...register("age")} />
+            <input type="age" placeholder="age" {...register("age")} />
           </div>
 
           <div className="form-group">
             <label className="form-label" htmlFor="gender">
               Gender:
             </label>
-            <input
-              type="gender"
-              placeholder="gender"
-              {...register("gender")}
-            />
+            <input type="gender" placeholder="gender" {...register("gender")} />
           </div>
 
           <div className="form-group">
             <label className="form-label" htmlFor="phone">
-             Phone:
+              Phone:
             </label>
-            <input
-              type="phone"
-              placeholder="phone"
-              {...register("phone")}
-            />
+            <input type="phone" placeholder="phone" {...register("phone")} />
           </div>
 
           <div className="form-group">
             <label className="form-label" htmlFor="city">
               City:
             </label>
-            <input
-              type="city"
-              placeholder="city"
-              {...register("city")}
-            />
+            <input type="city" placeholder="city" {...register("city")} />
           </div>
 
           <div className="form-group">
             <label className="form-label" htmlFor="address">
-             Address:
+              Address:
             </label>
             <input
               type="address"
@@ -101,11 +87,7 @@ const Register = () => {
             <label className="form-label" htmlFor="email">
               Email:
             </label>
-            <input
-              type="email"
-              placeholder="email"
-              {...register("email")}
-            />
+            <input type="email" placeholder="email" {...register("email")} />
           </div>
 
           <div className="form-group">

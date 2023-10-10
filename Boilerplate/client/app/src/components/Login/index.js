@@ -1,9 +1,10 @@
+import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import "../Login/style.css";
 
 const Login = ({ user, setUser }) => {
-  console.log(user);
+  const [errorMessage, setErrorMessage] = useState(""); // Initialize the error message state
 
   const loginUser = async (data) => {
     try {
@@ -28,8 +29,12 @@ const Login = ({ user, setUser }) => {
 
     if (res.data) {
       setUser(res.data);
+    } else {
+      // If login fails, set the error message
+      setErrorMessage("Password is incorrect");
     }
   };
+
   return (
     <>
       <div className="registration-container">
@@ -58,6 +63,8 @@ const Login = ({ user, setUser }) => {
           <button className="submit-button" type="submit">
             Login
           </button>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}{" "}
+          {/* Display error message */}
         </form>
       </div>
     </>
