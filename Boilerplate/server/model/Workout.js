@@ -1,6 +1,5 @@
 import { Schema, model } from "mongoose";
 
-
 // Define characteristicsSchema first
 const characteristicsSchema = new Schema({
   weight: Number,
@@ -23,6 +22,7 @@ const characteristicsSchema = new Schema({
     enum: ['normal', 'midday break', 'irregular']
   }
 });
+
 // Define WorkoutSchema using characteristicsSchema
 const WorkoutSchema = new Schema({
   gender: {
@@ -36,21 +36,5 @@ const WorkoutSchema = new Schema({
 });
 const Workout = model('Workout', WorkoutSchema);
 export default Workout;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

@@ -21,33 +21,7 @@ export const userRegister = async (req, res) => {
 };
 
 // login
-export const userLogin = async (req, res) => {
-  try {
-    const { email, password } = req.body;
 
-    const newUser = await User.find({
-      email,
-    });
-
-    if (!user) {
-      throw new Error("The user doesn't exist");
-      return;
-    }
-
-    const passwordCheck = bcrypt.compareSync(password, user.password);
-
-    if (!password) {
-      throw new Error("wrong password");
-      return;
-    }
-
-    const token = jwt.sign({ loginId: User._id }, SECRET_KEY, {
-      expiresIn: "1hour",
-    });
-  } catch (error) {
-    res.json(error);
-  }
-};
 
 // find the login
 export const getUser = (req, res) => {
