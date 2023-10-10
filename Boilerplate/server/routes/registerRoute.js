@@ -7,17 +7,17 @@ let router = express.Router();
 
 router.post(
   "/",
-  // check("fullName").notEmpty().withMessage("Full Name is required"),
-  // check("gender").notEmpty().withMessage("Gender is required"),
-  // check("email").notEmpty().withMessage("Email is required"),
-  // check("phone").notEmpty().withMessage("Phone number is required"),
-  // check("city").notEmpty().withMessage("City is required"),
-  // check("address").notEmpty().withMessage("Address is required"),
-  // check("age").notEmpty().withMessage("Your real age is required"),
-  // check("email").isEmail().withMessage("Email is not valid"),
-  // check("password").notEmpty().withMessage("Password is required"),
-  // check("password").isLength({ min: 5 }).withMessage("Not a strong password"),
-  // check("address").notEmpty().withMessage("Address is required"),
+   check("fullName").notEmpty().withMessage("Full Name is required"),
+   check("gender").notEmpty().withMessage("Gender is required"),
+   check("phone").notEmpty().withMessage("Phone number is required"),
+   check("city").notEmpty().withMessage("City is required"),
+   check("address").notEmpty().withMessage("Address is required"),
+   check("age").notEmpty().withMessage("Your real age is required"),
+   check("email").isEmail().withMessage("Email is not valid"),
+   check("email").notEmpty().withMessage("Email is required"),
+   check("password").notEmpty().withMessage("Password is required"),
+   check("password").isLength({ min: 5 }).withMessage("Not a strong password"),
+   
 
   async (req, res) => {
     const errors = validationResult(req);
@@ -112,7 +112,7 @@ router.put(
       // Save the updated user data
       await user.save();
 
-      res.json({ success: true, message: "User information updated" });
+      res.json({ success: true, message: "User has been registered" });
     } catch (error) {
       console.error(error);
       res
