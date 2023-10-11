@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import {Button,FormLabel,Input,TextField} from '@mui/material';
+import {Button,TextField} from '@mui/material';
 
  const Register = () => {
   const navigate = useNavigate();
@@ -37,30 +37,30 @@ import {Button,FormLabel,Input,TextField} from '@mui/material';
         <h2 className="registration-title"> Register if you are not a member</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
-            <TextField id="filled-basic"  variant="filled"placeholder="Full Name"{...register("fullName",{required:true})} />
+            <TextField id="filled-basic"  variant="filled"placeholder="full Name"{...register("fullName",{required:true})} />
           </div>
           <div className="form-group">
-            <TextField id="filled-basic"  variant="filled"placeholder="Age"{...register("Age",{required:true})} />
+            <TextField id="filled-basic"  variant="filled"placeholder="age"{...register("age",{required:true})} />
           </div>
           <div className="form-group">
-            <TextField id="filled-basic"  variant="filled"placeholder="Gender"{...register("Gender",{required:true})} />
+            <TextField id="filled-basic"  variant="filled"placeholder="gender"{...register("gender",{required:true})} />
           </div>
           <div className="form-group">
-            <TextField id="filled-basic"  variant="filled"placeholder="Phone"{...register("Phone",{required:true})} />
+            <TextField id="filled-basic"  variant="filled"placeholder="phone"{...register("phone",{required:true})} />
           </div>
           <div className="form-group">
-            <TextField id="filled-basic"  variant="filled"placeholder="City"{...register("City",{required:true})} />
+            <TextField id="filled-basic"  variant="filled"placeholder="city"{...register("city",{required:true})} />
           </div>
           <div className="form-group">
-            <TextField id="filled-basic"  variant="filled"placeholder="Address"{...register("Address",{required:true})} />
+            <TextField id="filled-basic"  variant="filled"placeholder="address"{...register("address",{required:true})} />
           </div>
           <div className="form-group">
-            <TextField id="filled-basic"  variant="filled"placeholder="Email"{...register("Email",{required:true})} />
+            <TextField id="filled-basic"  variant="filled"placeholder="email"{...register("email",{required:true})} />
           </div>
           <div className="form-group">
-            <TextField id="filled-basic"  variant="filled"placeholder="Password"{...register("Password",{required:true,min:8})} />
+            <TextField id="filled-basic"  variant="filled"placeholder="password"{...register("password",{required:true,min:8})} />
           </div>
-          <Button variant="contained" type="submit">SignUp</Button>
+          <Button variant="contained" type="submit">signup</Button>
         </form>
         <h2>{message && message}</h2>
       </div>

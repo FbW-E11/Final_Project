@@ -57,10 +57,10 @@ const Login = ({ setUser }) => {
               {...register("password", {required:true,min:8})}
             />
           </div>
-          <Button variant="contained"type="submit">SignIn</Button>
+          <Button variant="contained"type="submit">signin</Button>
           <Button variant="contained">
             <Link to="/register">
-            SignUp
+            signup
           </Link>
           </Button> 
           {errorMessage && <p className="error-message">{errorMessage}</p>}{" "}
