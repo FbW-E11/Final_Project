@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import "../Login/style.css";
-import { useNavigate,Link} from "react-router-dom";
-import {Button,FormLabel,Input} from '@mui/material';
+import { useNavigate, Link } from "react-router-dom";
+import { Button, FormLabel, Input } from "@mui/material";
 const Login = ({ setUser }) => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(""); // Initialize the error message state
@@ -27,10 +27,10 @@ const Login = ({ setUser }) => {
     const res = await loginUser(data);
     console.log(res.data);
     if (res.data) {
-      setUser(res.data)
-          navigate("/workoutpage");
-        } 
-      };
+      setUser(res.data);
+      navigate("/workoutpage");
+    }
+  };
   return (
     <>
       <div className="registration-container">
@@ -43,8 +43,7 @@ const Login = ({ setUser }) => {
             <Input
               type="email"
               placeholder="email"
-              
-              {...register("email", {required:true})}
+              {...register("email", { required: true })}
             />
           </div>
           <div className="form-group">
@@ -54,15 +53,15 @@ const Login = ({ setUser }) => {
             <Input
               type="password"
               placeholder="password"
-              {...register("password", {required:true,min:8})}
+              {...register("password", { required: true, min: 8 })}
             />
           </div>
-          <Button variant="contained"type="submit">SignIn</Button>
+          <Button variant="contained" type="submit">
+            SignIn
+          </Button>
           <Button variant="contained">
-            <Link to="/register">
-            SignUp
-          </Link>
-          </Button> 
+            <Link to="/register">SignUp</Link>
+          </Button>
           {errorMessage && <p className="error-message">{errorMessage}</p>}{" "}
           {/* Display error message */}
         </form>

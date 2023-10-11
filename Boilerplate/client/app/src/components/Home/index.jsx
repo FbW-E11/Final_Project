@@ -24,8 +24,6 @@ function Home() {
       ) : (
         <div className="app-container">
           <Login user={user} setUser={setUser} />
-
-          
         </div>
       )}
     </div>
@@ -33,5 +31,3 @@ function Home() {
 }
 
 export default Home;
-
-

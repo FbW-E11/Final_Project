@@ -10,8 +10,8 @@ import {Button,FormLabel,Input,TextField} from '@mui/material';
   const SignUpUser = async (data) => {
     try {
       const response = await axios.post(`http://localhost:5001/register`, data);
-      console.log("response from register is", response);
-      return response;
+      console.log('response from register is', response)
+      return response
     } catch (error) {
       console.log(error.message);
     }
