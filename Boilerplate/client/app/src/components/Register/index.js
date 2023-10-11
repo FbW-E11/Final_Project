@@ -13,11 +13,15 @@ const Register = () => {
       const response = await axios.post(`http://localhost:5001/register`, data);
       console.log("response from register is", response);
 
+
        if (response.data) { 
         return response.data;
        } else {
         throw new Error("Response does not contain data property.");
       } 
+
+    
+
     } catch (error) {
       console.log(error.message);
       throw error;
