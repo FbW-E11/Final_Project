@@ -1,27 +1,26 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, IconButton, InputAdornment } from "@mui/material";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 const Register = () => {
   const navigate = useNavigate();
   const [message, setMessage] = useState(null);
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
   const SignUpUser = async (data) => {
     try {
       const response = await axios.post(`http://localhost:5001/register`, data);
       console.log("response from register is", response);
 
-
-       if (response.data) { 
+      if (response.data) {
         return response.data;
-       } else {
+      } else {
         throw new Error("Response does not contain data property.");
-      } 
-
-    
-
+      }
     } catch (error) {
       console.log(error.message);
       throw error;
@@ -52,10 +51,7 @@ const Register = () => {
   return (
     <div className="join">
       <div className="registration-container">
-        <h2 className="registration-title">
-          {" "}
-          Register if you are not a member
-        </h2>
+        <h2 className="registration-title">Register if you are not a member</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
             <TextField
@@ -119,6 +115,19 @@ const Register = () => {
               variant="filled"
               placeholder="Password"
               {...register("password", { required: true, min: 8 })}
+              type={showPassword ? "text" : "password"} // Toggle password visibility
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
           </div>
           <Button variant="contained" type="submit">
@@ -130,4 +139,5 @@ const Register = () => {
     </div>
   );
 };
+
 export default Register;
