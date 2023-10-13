@@ -3,7 +3,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import "../Login/style.css";
 import { useNavigate,Link} from "react-router-dom";
-import {Button,FormLabel,Input} from '@mui/material';
+import {Button,TextField} from '@mui/material';
 
 const Login = ({ setUser }) => {
   const navigate = useNavigate();
@@ -38,24 +38,19 @@ const Login = ({ setUser }) => {
         <h2 className="registration-title">Login</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
-            <FormLabel className="form-label" htmlFor="username">
-              Email:
-            </FormLabel>
-            <Input
-              type="email"
+            <TextField
+              id="filled-basic"
+              variant="filled"
               placeholder="email"
-              
-              {...register("email", {required:true})}
+              {...register("email", { required: true })}
             />
           </div>
-          <div className="form-group">
-            <FormLabel className="form-label" htmlFor="password">
-              Password:
-            </FormLabel>
-            <Input
-              type="password"
+           <div className="form-group">
+            <TextField
+              id="filled-basic"
+              variant="filled"
               placeholder="password"
-              {...register("password", {required:true,min:8})}
+              {...register("password", { required: true })}
             />
           </div>
           <Button variant="contained"type="submit">signin</Button>

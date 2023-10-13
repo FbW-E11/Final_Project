@@ -26,6 +26,9 @@ const ExerciseSchema = new Schema({
      required: true, 
     enum: ['strength', 'weight-loss','building muscles', 'athletic', 'custom'],
   },
+  user:{
+    type : Schema.Types.ObjectId
+  }
 })
 
 
