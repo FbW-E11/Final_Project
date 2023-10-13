@@ -1,15 +1,17 @@
 import "./App.css";
 import Register from "./components/Register/index";
-import { Routes, Route,Link} from "react-router-dom";
+import Workout from "./components/Workout/index";
+import Exercise from "./components/Exercise/index";
+import { Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
-
 
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<Workout />}></Route>
       <Route path="/register" element={<Register />}></Route>
-      <Route path="/" element={<Home />}></Route>
-     
+      <Route path="/home" element={<Home />}></Route>
+      <Route path="/exercise" element={<Exercise />}></Route>
     </Routes>
   );
 }

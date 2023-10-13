@@ -4,15 +4,20 @@ import cors from "cors";
 import loginRoute from "./routes/loginRoute.js";
 import registerRoute from "./routes/registerRoute.js";
 import workoutRoute from "./routes/workoutRoute.js";
+import exerciseRoute from "./routes/exerciseRoute.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin:"http://localhost:3000",credentials:true
-}));
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
 app.use("/workout", workoutRoute);
+app.use("/exercise", exerciseRoute);
 
 // app.get('/test', (req, res) => res.send('hello there'))
 mongoose
