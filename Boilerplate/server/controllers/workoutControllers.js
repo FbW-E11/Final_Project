@@ -3,7 +3,7 @@ import  Workout  from '../model/Workout.js';
 
 const getWorkouts = async (req, res) => {
   try {
-    // We need to get  workouts from our local database or fetch from a fintness Api
+    // We need to get  workouts from our local database or fetch from a fitness Api
     const workouts = await Workout.find();
     res.json({ workouts });
   } catch (error) {
