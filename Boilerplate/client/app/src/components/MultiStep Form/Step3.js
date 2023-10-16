@@ -1,9 +1,12 @@
-import React from 'react';
+import React from "react";
+
 const Step3 = ({ formData, setFormData, prevStep }) => {
   const { muscleType, dietHabits, sleepingHabits } = formData;
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   return (
     <div>
       <h2>Step 3: Additional Information</h2>
@@ -15,17 +18,19 @@ const Step3 = ({ formData, setFormData, prevStep }) => {
           value={muscleType}
           onChange={handleChange}
         >
+          <option value="">-Select an option-</option> {/* Initially empty */}
           <option value="Endomorph">Endomorph</option>
           <option value="Mesomorph">Mesomorph</option>
           <option value="Ectomorph">Ectomorph</option>
         </select>
         <label htmlFor="dietHabits">Diet Habits:</label>
         <select
-          id="Diet Habits"
-          name="Diet Habits"
+          id="dietHabits"
+          name="dietHabits"
           value={dietHabits}
           onChange={handleChange}
         >
+          <option value="">-Select an option-</option> {/* Initially empty */}
           <option value="Omnivore">Omnivore</option>
           <option value="Vegetarian">Vegetarian</option>
           <option value="Vegan">Vegan</option>
@@ -37,6 +42,7 @@ const Step3 = ({ formData, setFormData, prevStep }) => {
           value={sleepingHabits}
           onChange={handleChange}
         >
+          <option value="">-Select an option-</option> {/* Initially empty */}
           <option value="normal">Normal</option>
           <option value="midday break">Midday break</option>
           <option value="irregular">Irregular</option>
@@ -46,4 +52,5 @@ const Step3 = ({ formData, setFormData, prevStep }) => {
     </div>
   );
 };
+
 export default Step3;

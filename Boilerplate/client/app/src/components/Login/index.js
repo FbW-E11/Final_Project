@@ -81,6 +81,7 @@ const Login = ({ setUser }) => {
               className="common-input"
             />
           </div>
+
           <Button variant="contained" type="submit">
             SignIn
           </Button>
@@ -93,6 +94,7 @@ const Login = ({ setUser }) => {
             </Link>
           </Button>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
+
         </form>
       </div>
     </>
