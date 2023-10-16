@@ -1,3 +1,4 @@
+
 import { Schema, model } from "mongoose";
 
 // Define characteristicsSchema first
@@ -36,5 +37,25 @@ const WorkoutSchema = new Schema({
 });
 const Workout = model('Workout', WorkoutSchema);
 export default Workout;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
