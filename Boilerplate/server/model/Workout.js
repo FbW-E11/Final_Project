@@ -11,7 +11,7 @@ const characteristicsSchema = new Schema({
   SetNumber: Number,
   muscleType: {
     type: String,
-    enum: ['Endomorph', 'Mesomorph', 'Ectomorph']
+    enum: ['Endomorph', 'Mesomorph', 'Ectomorph',]
   },
   dietHabits: {
     type: String,
