@@ -1,6 +1,7 @@
 import React from "react";
 import "../Workout/style.css";
 import { useNavigate } from "react-router-dom";
+import MultiStepForm from "../MultiStep Form/MultiStepForm.js";
 
 function Workout() {
   const navigate = useNavigate();
@@ -45,14 +46,17 @@ function Workout() {
           </ul>
         </div>
         <div className="testimonial-container">
+           
+          <MultiStepForm />
+          
           <h2>Testimonials</h2>
           <p>
             See what our satisfied customers have to say about their fitness
             journey.
           </p>
           <div className="testimonial">
-            <img src="user1.jpg" alt="User 1" className="user-avatar" />
-            <p>
+          
+          <p>
               "I've never felt better since I started using this website. It's
               truly life-changing!"
             </p>
@@ -62,11 +66,25 @@ function Workout() {
               "The workouts are amazing, and the progress tracking is a
               game-changer!"
             </p>
+            
           </div>
+          <div className="testimonial">
+            
+            
+          </div>
+          <div className="testimonial">
+            <p>
+              "The workouts are amazing, and the progress tracking is a
+              game-changer!"
+            </p>
+            
+          </div>
+          
           <button
             className="next-button"
             onClick={onSubmit} // Use the onSubmit function from the workout object
           >
+            
             Next
           </button>
         </div>

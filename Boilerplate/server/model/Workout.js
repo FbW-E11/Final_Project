@@ -1,6 +1,7 @@
 
 import { Schema, model } from "mongoose";
 
+
 // Define characteristicsSchema first
 const characteristicsSchema = new Schema({
   weight: Number,
@@ -12,7 +13,9 @@ const characteristicsSchema = new Schema({
   SetNumber: Number,
   muscleType: {
     type: String,
-    enum: ['Endomorph', 'Mesomorph', 'Ectomorph']
+
+    enum: ['Endomorph', 'Mesomorph', 'Ectomorph',]
+
   },
   dietHabits: {
     type: String,
@@ -22,6 +25,7 @@ const characteristicsSchema = new Schema({
     type: String,
     enum: ['normal', 'midday break', 'irregular']
   }
+
 });
 
 // Define WorkoutSchema using characteristicsSchema
