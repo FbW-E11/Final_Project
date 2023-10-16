@@ -1,14 +1,12 @@
 import React from "react";
 import "../Workout/style.css";
 import { useNavigate } from "react-router-dom";
-
+import MultiStepForm from "../MultiStep Form/MultiStepForm.js"
 function Workout() {
   const navigate = useNavigate();
-
   const onSubmit = () => {
     navigate("/home");
   };
-
   return (
     <div className="app-container">
       <header className="header">
@@ -58,6 +56,7 @@ function Workout() {
             </p>
           </div>
           <div className="testimonial">
+            <MultiStepForm/>
             <p>
               "The workouts are amazing, and the progress tracking is a
               game-changer!"
