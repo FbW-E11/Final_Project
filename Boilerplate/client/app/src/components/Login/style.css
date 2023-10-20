@@ -1,27 +1,36 @@
+
+
+
 .registration-container {
+   
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-  }
+    background-color: #e0a8a8;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);  }
   
   .registration-title {
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
+    color:pink;
+    text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px, rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
+    
   }
   
   .form-group {
     margin-bottom: 15px;
+    
   }
   
   .form-label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    
   }
   
   input[type="email"],
@@ -31,6 +40,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    color:rgb(15, 1, 1);
   }
   
   .submit-button {
@@ -38,7 +48,7 @@
     width: 100%;
     padding: 10px;
     background-color: #007bff;
-    color:#fff;
+    color:#f1e6e6;
     border: none;
     border-radius: 5px;
     font-size: 18px;

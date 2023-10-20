@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { Button, TextField, IconButton, InputAdornment } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-
 const Register = () => {
   const navigate = useNavigate();
   const [message, setMessage] = useState(null);
-  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const SignUpUser = async (data) => {
     try {
@@ -37,8 +38,12 @@ const Register = () => {
   const onSubmit = async (data) => {
     console.log(data);
     try {
+      if (data.password !== confirmPassword) {
+        setMessage("Passwords do not match");
+        return;
+      }
+
       const res = await SignUpUser(data);
-      console.log("res", res);
       reset();
       if (res.success) {
         navigate("/home");
@@ -51,8 +56,17 @@ const Register = () => {
   return (
     <div className="join">
       <div className="registration-container">
-        <h2 className="registration-title">Register if you are not a member</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <h2 className="registration-title" style={{ textAlign: "center" }}>
+          Register if you are not a member
+        </h2>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <div className="form-group">
             <TextField
               id="filled-basic"
@@ -115,7 +129,7 @@ const Register = () => {
               variant="filled"
               placeholder="Password"
               {...register("password", { required: true, min: 8 })}
-              type={showPassword ? "text" : "password"} // Toggle password visibility
+              type={showPassword ? "text" : "password"}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
@@ -134,7 +148,45 @@ const Register = () => {
               }}
             />
           </div>
-          <Button variant="contained" type="submit">
+
+          <div className="form-group">
+            <TextField
+              id="filled-basic"
+              variant="filled"
+              placeholder="Confirm Password"
+              type={showConfirmPassword ? "text" : "password"}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={() =>
+                        setShowConfirmPassword(!showConfirmPassword)
+                      }
+                    >
+                      {showConfirmPassword ? (
+                        <VisibilityIcon />
+                      ) : (
+                        <VisibilityOffIcon />
+                      )}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </div>
+
+          <Button
+            variant="contained"
+            type="submit"
+            style={{
+              backgroundColor: "pink",
+              color: "black",
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+            }}
+          >
             SignUp
           </Button>
         </form>
