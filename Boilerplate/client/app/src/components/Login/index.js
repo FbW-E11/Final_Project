@@ -13,6 +13,9 @@ import {
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
+
+// Rest of your component code
+
 const Login = ({ setUser }) => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
