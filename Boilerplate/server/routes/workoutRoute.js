@@ -1,98 +1,92 @@
 import express from "express";
 import { check, validationResult } from "express-validator";
-import Workout from "../model/Workout.js";
+import Exercise from "../model/Exercise.js";
 const router = express.Router();
-
-
-
-// Create a new workout
+// Create a new exercise
+router.get("/getall",  async (req, res) => {
+  const allExercises = await Exercise.find()
+  res.json(allExercises)
+});
+router.get("/getByMuscle/:muscle",  async (req, res) => {
+  const muscle = req.params.muscle
+  console.log(req.params)
+  const allExercises = await Exercise.find({muscle :muscle})
+  res.json(allExercises)
+});
 router.post(
   "/",
-  check("gender").notEmpty().withMessage("Gender is required"),
-  check("characteristics")
-    .isObject()
-    .withMessage("Characteristics are required"),
+  check("time").notEmpty().withMessage("time is required"),
   async (req, res) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
       }
-
-      const { gender, characteristics } = req.body;
-
-      // Create a new workout document
-      const newWorkout = new Workout({
-        gender,
-        characteristics,
+      const { time,equipment,muscle,fitness_level, fitness_goals } = req.body;
+      // Create a new exercise document
+      const newExercise = new Exercise({
+        time,equipment,muscle,fitness_level, fitness_goals
       });
-
-      await newWorkout.save();
-      res.json(newWorkout);
+      await newExercise.save();
+      res.json(newExercise);
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Internal server error" });
     }
   }
 );
-
-// Get all workouts
+// Get all exercises
 router.get("/", async (req, res) => {
   try {
-    const workouts = await Workout.find();
-    res.json(workouts);
+    const exercises = await Exercise.find();
+    res.json(exercises);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
   }
 });
-
-// Get a specific workout by ID
+// Get a specific exercise by ID
 router.get("/:id", async (req, res) => {
   try {
-    const workout = await Workout.findById(req.params.id);
-    if (!workout) {
-      return res.status(404).json({ message: "Workout not found" });
+    const exercise = await Exercise.findById(req.params.id);
+    if (!exercise) {
+      return res.status(404).json({ message: "Exercise not found" });
     }
-    res.json(workout);
+    res.json(exercise);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
   }
 });
-
-// Update a workout by ID
+// Update a exercise by ID
 router.put("/:id", async (req, res) => {
   try {
-    const { gender, characteristics } = req.body;
-    const workout = await Workout.findByIdAndUpdate(
+    const { time,equipment,muscle,fitness_level, fitness_goals } = req.body;
+    const exercise = await Exercise.findByIdAndUpdate(
       req.params.id,
-      { gender, characteristics },
+      { time,equipment,muscle,fitness_level, fitness_goals },
       { new: true }
     );
-    if (!workout) {
-      return res.status(404).json({ message: "Workout not found" });
+    if (!exercise) {
+      return res.status(404).json({ message: "Exercise not found" });
     }
-    res.json(workout);
+    res.json(exercise);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
   }
 });
-
-// Delete a workout by ID
+// Delete an exercise by ID
 router.delete("/:id", async (req, res) => {
   try {
-    const workout = await Workout.findByIdAndDelete(req.params.id);
-    if (!workout) {
-      return res.status(404).json({ message: "Workout not found" });
+    const exercise = await Exercise.findByIdAndDelete(req.params.id);
+    if (!exercise) {
+      return res.status(404).json({ message: "Exercise not found" });
     }
-    res.json({ message: "Workout deleted" });
+    res.json({ message: "Exercise deleted" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
   }
 });
-
 export default router;
-

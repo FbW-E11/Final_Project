@@ -18,7 +18,6 @@ function Workout() {
   const onSubmit = () => {
     navigate("/home");
   };
-
   return (
     <div className="app-container">
       <header className="header">
