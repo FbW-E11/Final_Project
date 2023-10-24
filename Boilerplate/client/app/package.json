@@ -20,7 +20,8 @@
     "survey-core": "^1.9.112",
     "survey-creator-react": "^1.9.112",
     "survey-react-ui": "^1.9.112",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zxcvbn": "^4.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
