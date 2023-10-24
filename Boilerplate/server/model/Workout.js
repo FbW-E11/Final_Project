@@ -37,6 +37,9 @@ const WorkoutSchema = new Schema({
   characteristics: {
     Male: characteristicsSchema,
     Female: characteristicsSchema
+  },
+  user:{
+    type : Schema.Types.ObjectId
   }
 });
 const Workout = model('Workout', WorkoutSchema);

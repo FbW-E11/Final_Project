@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, TextField, IconButton, InputAdornment } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import zxcvbn from "zxcvbn"; // Import zxcvbn
 
 const Register = () => {
   const navigate = useNavigate();
@@ -12,10 +13,12 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordStrength, setPasswordStrength] = useState(0); // Password strength score
+  const [passwordColor, setPasswordColor] = useState("red");
 
   const SignUpUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5001/register`, data);
+      const response = await axios.post("http://localhost:5001/register", data);
       console.log("response from register is", response);
 
       if (response.data) {
@@ -29,12 +32,23 @@ const Register = () => {
     }
   };
 
-  const { control, handleSubmit, reset } = useForm(); // Use control instead of register
+  const { control, handleSubmit, reset } = useForm();
+
+  const handlePasswordChange = (event) => {
+    const password = event.target.value;
+    const result = zxcvbn(password);
+    setPasswordStrength(result.score);
+    setStrengthColor(result.score); // Set the password strength color
+  };
+
+  const setStrengthColor = (score) => {
+    const colors = ["red", "orange", "yellow", "green", "green"];
+    setPasswordColor(colors[score]);
+  };
 
   const onSubmit = async (data) => {
     console.log(data);
 
-    // Check if the password and confirm password match
     if (data.password !== confirmPassword) {
       setMessage("Passwords do not match");
       return;
@@ -66,7 +80,7 @@ const Register = () => {
           }}
         >
           <div className="form-group">
-            <Controller // Use Controller instead of register
+            <Controller
               name="fullName"
               control={control}
               render={({ field }) => (
@@ -80,7 +94,7 @@ const Register = () => {
             />
           </div>
           <div className="form-group">
-            <Controller // Use Controller instead of register
+            <Controller
               name="age"
               control={control}
               render={({ field }) => (
@@ -94,7 +108,7 @@ const Register = () => {
             />
           </div>
           <div className="form-group">
-            <Controller // Use Controller instead of register
+            <Controller
               name="gender"
               control={control}
               render={({ field }) => (
@@ -108,7 +122,7 @@ const Register = () => {
             />
           </div>
           <div className="form-group">
-            <Controller // Use Controller instead of register
+            <Controller
               name="phone"
               control={control}
               render={({ field }) => (
@@ -122,7 +136,7 @@ const Register = () => {
             />
           </div>
           <div className="form-group">
-            <Controller // Use Controller instead of register
+            <Controller
               name="city"
               control={control}
               render={({ field }) => (
@@ -136,7 +150,7 @@ const Register = () => {
             />
           </div>
           <div className="form-group">
-            <Controller // Use Controller instead of register
+            <Controller
               name="address"
               control={control}
               render={({ field }) => (
@@ -150,7 +164,7 @@ const Register = () => {
             />
           </div>
           <div className="form-group">
-            <Controller // Use Controller instead of register
+            <Controller
               name="email"
               control={control}
               render={({ field }) => (
@@ -163,50 +177,56 @@ const Register = () => {
               )}
             />
           </div>
-          <Controller // Use Controller instead of register
-            name="password"
-            control={control}
-            rules={{
-              required: "*Password is required",
-              validate: {
-                minLength: (value) =>
-                  value.length >= 8 ||
-                  "Password must be at least 8 characters long",
-                containsSpecialCharacter: (value) =>
-                  /[!@#$%^&*()_+{}[\]:;<>,.?~\\/-]/.test(value) ||
-                  "Password must contain at least one special character",
-              },
-            }}
-            render={({ field, fieldState }) => (
-              <div className="form-group">
-                <TextField
-                  id="filled-basic"
-                  variant="filled"
-                  placeholder="Password"
-                  type={showPassword ? "text" : "password"}
-                  {...field}
-                  error={Boolean(fieldState.error)}
-                  helperText={fieldState.error?.message}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={() => setShowPassword(!showPassword)}
-                        >
-                          {showPassword ? (
-                            <VisibilityIcon />
-                          ) : (
-                            <VisibilityOffIcon />
-                          )}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              </div>
-            )}
-          />
+          <div className="form-group">
+            <Controller
+              name="password"
+              control={control}
+              rules={{
+                required: "*Password is required",
+                validate: {
+                  minLength: (value) =>
+                    value.length >= 8 ||
+                    "Password must be at least 8 characters long",
+                  containsSpecialCharacter: (value) =>
+                    /[!@#$%^&*()_+{}[\]:;<>,.?~\\/-]/.test(value) ||
+                    "Password must contain at least one special character",
+                },
+              }}
+              render={({ field, fieldState }) => (
+                <div className="form-group">
+                  <TextField
+                    id="filled-basic"
+                    variant="filled"
+                    placeholder="Password"
+                    type={showPassword ? "text" : "password"}
+                    {...field}
+                    error={Boolean(fieldState.error)}
+                    helperText={fieldState.error?.message}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={() => setShowPassword(!showPassword)}
+                          >
+                            {showPassword ? (
+                              <VisibilityIcon />
+                            ) : (
+                              <VisibilityOffIcon />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                    onChange={(e) => {
+                      field.onChange(e);
+                      handlePasswordChange(e);
+                    }}
+                  />
+                </div>
+              )}
+            />
+          </div>
 
           <div className="form-group">
             <TextField
@@ -246,13 +266,17 @@ const Register = () => {
               boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
             }}
           >
-            SignUp
+            Sign Up
           </Button>
         </form>
         <h2>{message && message}</h2>
+        <div style={{ color: passwordColor }}>
+          Password Strength: {passwordStrength} (Weak to Strong)
+        </div>
       </div>
     </div>
   );
 };
 
 export default Register;
+
