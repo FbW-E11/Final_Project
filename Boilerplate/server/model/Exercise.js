@@ -9,12 +9,12 @@ const ExerciseSchema = new Schema({
   equipment: {
     type: String,
      required: true, 
-    enum: ['dumbbells', 'ropes', 'bars','barbell','kettlebell'],
+    enum: ['dumbbell', 'ropes', 'bars','barbell','kettlebell',`bodyweight`,`Bench Press`],
   },
   muscle: {
     type: String,
      required: true, 
-    enum: ['triceps', 'biceps', 'quadriceps','abs','hamstring'],
+    enum: ['triceps', 'biceps','triceps','quadriceps','abs','hamstring,']
   },
   fitness_level: {
     type: String,
@@ -26,6 +26,27 @@ const ExerciseSchema = new Schema({
      required: true, 
     enum: ['strength', 'weight-loss','building muscles', 'athletic', 'custom'],
   },
+  exerciseType:{
+    type :String,
+    enum :['Bodyweight Squats','Bench Press','Push-Ups','Plank','Dumbbell Rows','Leg Raises','Deadlifts',,`Dumbbell Bicep Curls`,'Pull-Ups'
+    ]
+  },
+  duration :{
+    type :String,
+    enum : ['5 sets of 10 reps','4 sets of 10 reps','3 sets of 10 reps','45 sets of 5 reps',`3 sets of 12 reps`
+
+    ]
+  },
+  description:{
+    type:String,
+  },
+  videoUrl:{
+  type :String,
+  },
+  imageUrl:{
+    type:String
+  },
+
   user:{
     type : Schema.Types.ObjectId
   }
