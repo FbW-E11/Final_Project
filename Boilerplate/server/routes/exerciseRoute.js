@@ -3,12 +3,9 @@ import { check, validationResult } from "express-validator";
 import Exercise from "../model/Exercise.js";
 
 const router = express.Router();
-
 // Create a new exercise
-
 router.get("/getall",  async (req, res) => {
   const allExercises = await Exercise.find()
-
   res.json(allExercises)
 });
 
@@ -16,18 +13,12 @@ router.get("/getByMuscle/:muscle",  async (req, res) => {
   const muscle = req.params.muscle
   console.log(req.params)
   const allExercises = await Exercise.find({muscle :muscle})
-
   res.json(allExercises)
 });
 
-
-
 router.post(
   "/",
-
   check("time").notEmpty().withMessage("time is required"),
-
-  
   async (req, res) => {
     try {
       const errors = validationResult(req);
