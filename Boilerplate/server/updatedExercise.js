@@ -1,12 +1,9 @@
-
 import mongoose from "mongoose";
 import { promises as fs } from 'fs';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import { json } from "express";
 import Exercise from "./model/Exercise.js";
-
-
 mongoose
   //.connect("mongodb://localhost:27017/Final-project-DataBase")
   .connect(
@@ -20,7 +17,6 @@ mongoose
   });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 const filePath = path.join(__dirname, 'data.json');
 const readData = async () => {
     try {
@@ -40,7 +36,4 @@ const readData = async () => {
         await newExercise.save()
       }
     };
-     
    saveData();
-  
-

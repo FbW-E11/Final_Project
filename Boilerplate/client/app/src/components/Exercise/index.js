@@ -1,136 +1,7 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "../Exercise/style.css";
-
-
-
-const Exercise = () => {
-  const [results, setResults] = useState([]);
-  useEffect(() => {
-    const fetchExercises = async () => {
-      try {
-        const options = {
-          method: "GET",
-          url: "https://api.api-ninjas.com/v1/exercises?muscle=biceps",
-          headers: {
-            "X-Api-Key": "oMU3CViQHefacZJoIy2o3A==Sq7psUz6uzquCPC7",
-          },
-        };
-        const response = await axios.request(options);
-        console.log(response.data);
-        setResults(response.data);
-
-      } 
-      catch (error) {
-        console.error("Error fetching exercises:", error);
-      }
-    };
-    fetchExercises();
-  }, []); // The empty dependency array ensures that the effect runs only once when the component mounts
-
-  return (
-    <div>
-      <h1>Exercise List</h1>
-      <ul>
-        {results.map((result, i) => (
-          <li key={i}>
-            {i}
-            {result.name}
-            {result.type}
-            {result.muscle}
-            {result.equipment}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-export default Exercise;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* import React, { useState } from "react";
-import "../Exercise/style.css";
-const ExerciseForm = () => {
-  const [exerciseData, setExerciseData] = useState({
-    time: 10,
-    equipment: "dumbbells",
-    muscle: "triceps",
-    fitness_level: "beginner",
-    fitness_goals: "strength",
-  });
-
+import React, { useState, useEffect } from 'react';
+import ReactPlayer from 'react-player'
+const ExerciseComponent = () => {
+  const [exerciseData, setExerciseData] = useState(null);
   // Function to fetch data from your API
   const fetchDataFromAPI = async () => {
     try {
@@ -142,7 +13,6 @@ const ExerciseForm = () => {
       // Handle errors as needed
     }
   };
-
   // Function to save data to local storage
   const saveDataToLocalStorage = () => {
     try {
@@ -153,7 +23,6 @@ const ExerciseForm = () => {
       // Handle errors as needed
     }
   };
-
    //Load data from local storage on component mount
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem('apiData'));
@@ -161,7 +30,6 @@ const ExerciseForm = () => {
       setExerciseData(storedData);
     }
   }, []);
-
   return (
     <div>
       {exerciseData && (
@@ -192,5 +60,4 @@ const ExerciseForm = () => {
     </div>
   );
 };
-
-export default ExerciseForm;
+export default ExerciseComponent;
