@@ -1,19 +1,238 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const Exercise = () => {
+  const [results, setResults] = useState([]);
+  const [exercise, setExercise] = useState("");
+
+  // Fetch exercises on component mount
+  useEffect(() => {
+    const fetchExercises = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/exercise");
+        // Assuming that the API returns an array of exercises
+        setResults(response.data);
+      } catch (error) {
+        console.error("Error fetching exercises:", error);
+      }
+    };
+    fetchExercises();
+  }, []);
+
+  // Send exercise data to the server
+  const sendToServer = () => {
+    if (exercise) {
+      fetch("http://localhost:5000/exercise", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          data: exercise,
+        }),
+      })
+        .then((response) => {
+          if (response.status === 200) {
+            console.log("Exercise data sent successfully");
+          } else {
+            console.error("Failed to send exercise data");
+          }
+        })
+        .catch((error) => {
+          console.error("Error sending exercise data:", error);
+        });
+    } else {
+      console.error("Please enter exercise data.");
+    }
+  };
+
+  return (
+    <div>
+      <h1>Exercise List</h1>
+      <ul>
+        {results.map((result, i) => (
+          <li key={i}>
+            {result.n} <br />
+
+            {result.name} <br />
+            {result.type} <br />
+            {result.muscle} <br />
+            {result.equipment} <br />
+          </li>
+        ))}
+      </ul>
+      <div>
+        <input
+          type="text"
+          value={exercise}
+          onChange={(e) => setExercise(e.target.value)}
+          placeholder="Enter exercise data"
+        />
+        <button onClick={sendToServer}>Select Exercise</button>
+      </div>
+    </div>
+  );
+};
+
+export default Exercise;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+
 
 
 const Exercise = () => {
   const [results, setResults] = useState([]);
+  const [exercise, setExercise] = useState();
   useEffect(() => {
     const fetchExercises = async () => {
       try {
         const options = {
           method: "GET",
-          url: "https://api.api-ninjas.com/v1/exercises?muscle=biceps",
-          headers: {
-            "X-Api-Key": "oMU3CViQHefacZJoIy2o3A==Sq7psUz6uzquCPC7",
-          },
+          url: "exerciseApi.js",
+          
         };
         const response = await axios.request(options);
         console.log(response.data);
@@ -26,6 +245,27 @@ const Exercise = () => {
     };
     fetchExercises();
   }, []); // The empty dependency array ensures that the effect runs only once when the component mounts
+
+const sendToServer = () => {
+
+  fetch('http://localhost:5000/exercise', {
+    method: 'POST',
+    headers: {
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify({
+      data: exercise.data
+    })
+  })
+
+
+
+}
+
+
+
+
+
 
   return (
     <div>
@@ -41,7 +281,17 @@ const Exercise = () => {
           </li>
         ))}
       </ul>
+
+<div>
+  <input type="text" onChange={e => setExercise(e.target.value)} />
+  <button onClick={sendToServer}>Exercise</button>
+</div>
+
+
     </div>
+
+
+    
   );
 };
 export default Exercise;
@@ -119,7 +369,7 @@ export default Exercise;
 
 
 
-/* import React, { useState } from "react";
+ import React, { useState } from "react";
 import "../Exercise/style.css";
 const ExerciseForm = () => {
   const [exerciseData, setExerciseData] = useState({
