@@ -1,215 +1,202 @@
-/* Reset some default styles and set a more consistent base */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #e9bcbc;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Vertically center the content */
   min-height: 100vh;
-}
-
+  background-image: url(./assets/blurred.jpg);
+  background-position: center;
+  background-size: cover;
+  }
 /* Create a more dynamic container that adapts to different screen sizes */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
-
 /* Header styles */
 .header {
-  background: linear-gradient(
-    to right,
-    #969cd3,
-    #3498db
-  ); /* Gradient background */
+  /* Gradient background */
   color: #fff;
   text-align: center;
-  padding: 60px;
+  padding: 65px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-}
-
+  background-image: url(./assets/weights.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    }
 .header h1 {
   font-size: 36px;
   margin: 0;
-  color: #eeddaa;
+  color: #FFE3E0;
   letter-spacing: 0.1em;
-  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2E2E2E, 0 2px 0 #2C2C2C, 0 3px 0 #2A2A2A,
     0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
-    0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
+    0 8px 0 #202020, 0 9px 0 #1E1E1E, 0 10px 0 #1C1C1C, 0 11px 0 #1A1A1A,
     0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
     0 22px 30px rgba(0, 0, 0, 0.9);
 }
-
 .header p {
   font-size: 18px;
-  color: #030c85;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
-    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+  color: #780116;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px white,
+    0 0 30px #FFE3E0, 0 0 40px #49FF18, 0 0 55px #FFE3E0, 0 0 75px white;
 }
-
 /* Navbar styles */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: #fff;
-  padding: 10px 0;
-  margin-bottom: 20px;
-  background: linear-gradient(to right, #969cd3, #3498db);
-
-  text-align: center;
-  padding: 4px 0;
-  text-align: center;
-  z-index: 100;
+    background: #FFE3E0;
+    font-weight: 400;
+    font-size: 0;
+    display: flex;
+    padding: 10px 0;
+    width: 80%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 20px;
+    padding: 0px;
+    z-index: 100;
+    padding-left: 800px;
+    padding-right: 800px;
 }
-
 .nav-list {
-  list-style: none;
-  padding: 0;
+  font-size: 0.8rem;
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+    cursor: pointer;
+    z-index: 5;
+    min-width: 20%;
+    height: 40px;
+    line-height: 50px;
+    text-align: center;
 }
-
 .nav-list li {
   display: inline;
   margin: 0 20px;
 }
-
 .nav-list a {
   text-decoration: none;
-  color: #eeddaa;
+  color: #780116;
   font-size: 16px;
   transition: color 0.3s;
 }
-
 .nav-list a:hover {
-  color: blue;
+  color: #DC2F02;
 }
-
 /* Style for the bodybuilder icon */
 .gym-icon {
-  margin-right:0 10px; 
-  color: orange;
+  margin-right:0 10px;
+  color: yellow;
   font-size: 54px;
-  
+  margin-top: 15px;
 }
-
 /* Content container styles */
 .content-container {
   margin-top: 40px;
 }
-
 .content-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
   margin-left: 20px;
-  color: #eeddaa;
+  color: #EF476F;
   text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
     rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
 }
-
 .content-container p {
   font-size: 16px;
   margin-left: 20px;
-  color: #444;
+  color: #FFEEDD;
   text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
 }
-
+.content-container li {
+  color: white;
+  margin-left: 20px;
+}
 /* Testimonial styles */
 .testimonial-container {
   margin-top: 40px;
   margin-left: 20px;
+  color: white;
 }
-
 .testimonial-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #eeddaa;
+  color: #EF476F;
   text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
     rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
 }
-
-.testimonial {
-  margin-bottom: 20px;
-  display: flex;
+.testimonial-container h3 {
+  color: yellow;
 }
-
+.testimonial-container p {
+  color: white;
+}
 .user-avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
 }
-
-.testimonial p {
-  font-size: 16px;
-  color: #555;
-  text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
-}
 /* Additional styles for the Contact Us section */
 .contact-container {
   margin-top: 40px;
   margin-left: 20px;
 }
-
 .contact-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #eeddaa;
+  color: #EF476F;
   text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
     rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
 }
-
 .contact-container p {
   font-size: 16px;
   margin-left: 20px;
-  color: #444;
+  color: #FFEEDD;
   text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
 }
-
 /* Footer styles */
 .footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #070f41;
-  padding: 20px 0;
-  color: #fff;
+  background-color: #FFE3E0;
+  padding: 25px 15px;
+  color: #780116;
   text-align: center;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-
 .social-icons {
   display: flex;
   gap: 20px;
   font-size: 24px;
 }
-
 .social-icons a {
   text-decoration: none;
-  color: #fff;
+  color: #780116;
   transition: color 0.3s;
 }
-
 .social-icons a:hover {
-  color: #eeddaa;
+  color: #EEDDAA;
 }
 .social-icons a {
   text-decoration: none;
-  color: #fff;
+  color: #780116;
   font-size: 24px;
   transition: transform 0.2s, color 0.3s;
 }
-
 .social-icons a:hover {
-  color: #3498db;
+  color: #DC2F02;
   transform: scale(1.1);
 }
-
 /* Media queries for responsive design */
 @media (max-width: 768px) {
   /* Additional styles for the Contact Us section */
@@ -217,23 +204,7 @@ body {
     margin-top: 40px;
     margin-left: 20px;
   }
-
-  .contact-container h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #eeddaa;
-    text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
-      rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
-  }
-
-  .contact-container p {
-    font-size: 16px;
-    margin-left: 20px;
-    color: #444;
-    text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
-  }
 }
-
 .nav-list li {
   margin: 0 10px;
 }
@@ -245,7 +216,6 @@ body {
   75% { transform: translateX(-5px); }
   100% { transform: translateX(0); }
 }
-
 /* Apply the animation to the element when the shake class is added */
 .shake {
   animation: shake 0.5s;
