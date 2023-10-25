@@ -17,7 +17,7 @@ function Home() {
             {user ? ( 
            
         <>
-         
+
           <h2>Welcome {user.username}</h2>
           
           <button className="logout-button" onClick={logoutUser}>
