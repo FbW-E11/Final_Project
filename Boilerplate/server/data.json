@@ -7,11 +7,11 @@
         "muscle": "biceps",
         "fitness_level": "beginner",
         "fitness_goals": "strength",
-        "exerciseType": "Dumbbell Bicep Curls",
+        "exerciseType": "dumbbell Bicep Curls",
         "videoUrl": "https://www.youtube.com/watch?v=XE_pHwbst04",
         "imageUrl": "https://cdn-0.weighttraining.guide/wp-content/uploads/2022/06/Two-arm-dumbbell-curl.png?ezimgfmt=ng%3Awebp%2Fngcb4",
         "duration": "3 sets of 12 reps",
-        "description": "Dumbbell bicep curls are a great exercise to build arm strength."
+        "description": "dumbbell bicep curls are a great exercise to build arm strength."
       },
       {
         "time": { "n": 20 },
@@ -63,11 +63,11 @@
         "muscle": "biceps",
         "fitness_level": "intermediate",
         "fitness_goals": "building muscles",
-        "exerciseType": "Dumbbell Rows",
+        "exerciseType": "dumbbell Rows",
         "videoUrl": "https://www.youtube.com/watch?v=gfUg6qWohTk",
         "imageUrl": "https://weighttraining.guide/wp-content/uploads/2017/01/bent-over-two-arm-dumbbell-row-resized.png",
         "duration": "4 sets of 10 reps",
-        "description": "Dumbbell Rows: Dumbbell rows are an upper body exercise that focus on the back muscles, particularly the latissimus dorsi. They help improve upper body strength and posture."
+        "description": "dumbbell Rows: dumbbell rows are an upper body exercise that focus on the back muscles, particularly the latissimus dorsi. They help improve upper body strength and posture."
       },  {
         "time": { "n": 20 },
         "equipment": "bodyweight",
@@ -91,252 +91,39 @@
         "duration": "4 sets of 10 reps",
         "description": "Deadlifts: Deadlifts are a full-body exercise that engage multiple muscle groups, including the legs, back, and core. They are excellent for overall strength and power."
       },  
-      
-      
-      
-      
       {
         "time": { "n": 20 },
         "equipment": "bodyweight",
-        "muscle": "quadriceps",
+        "muscle": "abs",
         "fitness_level": "intermediate",
         "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
+        "exerciseType": "Burpees",
+        "videoUrl": "https://youtube.com/shorts/VTsD3quZ5HE?si=t7RWoR3rRmsJw556",
+        "imageUrl": "https://www.theman.de/wp-content/uploads/2018/04/Burpees-Bewegung-658x400.jpg",
         "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
+        "description": "Burpees: Burpees are a full-body, high-intensity exercise that combines squatting, push-ups, and jumping. They provide an excellent cardiovascular workout and help with overall fitness."
       },  {
         "time": { "n": 20 },
         "equipment": "bodyweight",
-        "muscle": "quadriceps",
+        "muscle": "hamstring",
         "fitness_level": "intermediate",
         "fitness_goals": "building muscles",
         "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
+        "videoUrl": "https://youtu.be/7Bg3RqwwS9Q?si=YGToTTwY0cWVAndM",
+        "imageUrl": "https://images.squarespace-cdn.com/content/v1/54d09bf9e4b0384b4f8511d5/1453791420436-WQ7X2XY1J756QPQYYS4M/image-asset.jpeg?format=2500w",
         "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
+        "description": "hamstrings are a group of muscles located on the back of your thigh. They play a crucial role in various movements and are a key muscle group to target in your fitness routine. The hamstrings consist of three individual muscles"
       },  {
         "time": { "n": 20 },
         "equipment": "bodyweight",
-        "muscle": "quadriceps",
+        "muscle": "abs",
         "fitness_level": "intermediate",
         "fitness_goals": "building muscles",
         "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
+        "videoUrl": "https://youtube.com/shorts/BdjpCUEKlPo?si=OH8TLbaFPKVn2KiJ",
+        "imageUrl": "https://www.setforset.com/cdn/shop/articles/10_pack_abs_2000x.jpg?v=1633072885",
         "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      },  {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      }, {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      }, {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
-      }, {
-        "time": { "n": 20 },
-        "equipment": "bodyweight",
-        "muscle": "quadriceps",
-        "fitness_level": "intermediate",
-        "fitness_goals": "building muscles",
-        "exerciseType": "Bodyweight Squats",
-        "videoUrl": "https://www.example.com/bodyweight-squats-video",
-        "imageUrl": "https://www.example.com/bodyweight-squats-image",
-        "duration": "4 sets of 10 reps",
-        "description": "Bodyweight squats are effective for leg muscle development."
+        "description": "Core Stability: Strong abs provide stability to the core, aiding in balance and reducing the risk of injury during physical activities and daily movements."
       }
     ]
   }

@@ -261,7 +261,7 @@ const Register = () => {
             variant="contained"
             type="submit"
             style={{
-              backgroundColor: "pink",
+              backgroundColor: "#0056b3",
               color: "black",
               boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
             }}

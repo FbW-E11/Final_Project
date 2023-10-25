@@ -1,34 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player'
+import "../Exercise/style.css"
 const ExerciseComponent = () => {
   const [exerciseData, setExerciseData] = useState(null);
-  // Function to fetch data from your API
-  const fetchDataFromAPI = async () => {
-    try {
-      const response = await fetch('http://localhost:5001/Exercise');
-      const data = await response.json();
-      setExerciseData(data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      // Handle errors as needed
-    }
-  };
-  // Function to save data to local storage
-  const saveDataToLocalStorage = () => {
-    try {
-      localStorage.setItem('apiData', JSON.stringify(exerciseData));
-      console.log('Data saved to localStorage');
-    } catch (error) {
-      console.error('Error saving data to localStorage:', error);
-      // Handle errors as needed
-    }
-  };
    //Load data from local storage on component mount
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem('apiData'));
-    if (storedData) {
-      setExerciseData(storedData);
-    }
+    const fetchDataFromAPI = async () => {
+      try {
+        const response = await fetch('http://localhost:5001/Exercise');
+        const data = await response.json();
+        console.log(data)
+        setExerciseData(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        // Handle errors as needed
+      }
+    };
+    fetchDataFromAPI()
   }, []);
   return (
     <div>
@@ -40,6 +28,7 @@ const ExerciseComponent = () => {
           <ul className='list-container'>
         <li key={i}></li>
        <li>
+       <li><img src= {exercise.imageUrl}/></li>
        <ReactPlayer url={exercise.videoUrl} />
        </li>
        <li key={i}></li>
@@ -50,7 +39,6 @@ const ExerciseComponent = () => {
        <li>{exercise.fitness_level}</li>
        <li>{exercise.fitness_goals}</li>
        <li>{exercise.exerciseType}</li>
-       <li><img src= {exercise.imageUrl}/></li>
        <li>{exercise.duration}</li>
        </ul>
         </div>
