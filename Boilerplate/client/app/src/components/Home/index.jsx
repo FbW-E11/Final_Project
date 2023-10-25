@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Login from "../Login/index.js";
+import "./style.css"
 import axios from "axios";
 function Home() {
   const [user, setUser] = useState(null);

@@ -18,7 +18,7 @@ const Register = () => {
 
   const SignUpUser = async (data) => {
     try {
-      const response = await axios.post("http://localhost:5001/register", data);
+      const response = await axios.post("http://localhost:5000/register", data);
       console.log("response from register is", response);
 
       if (response.data) {
