@@ -18,7 +18,6 @@ function Workout() {
   const onSubmit = () => {
     navigate("/home");
   };
-
   return (
     <div className="app-container">
       <header className="header">
@@ -80,7 +79,8 @@ function Workout() {
           </ul>
         </div>
         <div className="testimonial-container">
-          <MultiStepForm />
+          
+        <MultiStepForm />
 
           <h2 id="about">About Us</h2>
           <p>

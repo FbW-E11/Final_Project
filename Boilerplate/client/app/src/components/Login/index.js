@@ -9,10 +9,10 @@ import {
   Input,
   IconButton,
   InputAdornment,
+  TextField,
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-
 
 // Rest of your component code
 
@@ -23,7 +23,7 @@ const Login = ({ setUser }) => {
 
   const loginUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5001/login`, data, {
+      const response = await axios.post(`http://localhost:5002/login`, data, {
         withCredentials: true,
       });
       return response.data; // Return data from the response, not the entire response object
@@ -41,10 +41,9 @@ const Login = ({ setUser }) => {
   const onSubmit = async (data) => {
     console.log(data);
     const user = await loginUser(data);
-    if (user) {
-      setUser(user);
-      navigate("/exercise");
-    }
+    /*if (user) {
+      setUser(user);*/
+    navigate("/exercise");
   };
 
   return (
@@ -53,11 +52,9 @@ const Login = ({ setUser }) => {
         <h2 className="registration-title">Login</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
-            <FormLabel className="form-label" htmlFor="username">
-              Email:
-            </FormLabel>
-            <Input
-              type="email"
+            <TextField
+              id="filled-basic"
+              variant="filled"
               placeholder="email"
               {...register("email", { required: true })}
               className="common-input"
@@ -97,7 +94,6 @@ const Login = ({ setUser }) => {
             </Link>
           </Button>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
-
         </form>
       </div>
     </>
