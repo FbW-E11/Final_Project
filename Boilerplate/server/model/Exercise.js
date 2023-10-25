@@ -33,7 +33,6 @@ const ExerciseSchema = new Schema({
     type: String,
     required: true,
   },
-  
 });
 
 const Exercise = model("Exercise", ExerciseSchema);
