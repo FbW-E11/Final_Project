@@ -2,6 +2,10 @@ import React from "react";
 import "../Workout/style.css";
 import { useNavigate } from "react-router-dom";
 import MultiStepForm from "../MultiStep Form/MultiStepForm.js";
+<<<<<<< HEAD
+function Workout() {
+  const navigate = useNavigate();
+=======
 import {
   FaFacebook,
   FaTwitter,
@@ -15,10 +19,10 @@ function Workout() {
   const navigate = useNavigate();
   
 
+>>>>>>> SFM
   const onSubmit = () => {
     navigate("/home");
   };
-
   return (
     <div className="app-container">
       <header className="header">
@@ -89,6 +93,28 @@ function Workout() {
             provide you with the tools and knowledge you need to live a healthy
             and active lifestyle.
           </p>
+<<<<<<< HEAD
+          <div className="testimonial">
+            <img src="user1.jpg" alt="User 1" className="user-avatar" />
+            <p>
+              "I've never felt better since I started using this website. It's
+              truly life-changing!"
+            </p>
+          </div>
+          <div className="testimonial">
+           <MultiStepForm/>
+            <p>
+              "The workouts are amazing, and the progress tracking is a
+              game-changer!"
+            </p>
+          </div>
+          <button
+            className="next-button"
+            onClick={onSubmit} // Use the onSubmit function from the workout object
+          >
+            Next
+          </button>
+=======
           <ul>
             <li>
               Nutrition Guidance: We believe that what you eat is just as
@@ -166,6 +192,7 @@ function Workout() {
           <p>Phone: +1-123-456-7890</p>
           <p>Email: info@myfitnesswebsite.com</p>
           {/* You can add additional contact information or a contact form here. */}
+>>>>>>> SFM
         </div>
 
         <button
@@ -199,5 +226,9 @@ function Workout() {
     </div>
   );
 }
+<<<<<<< HEAD
+export default Workout;
+=======
 
 export default Workout;
+>>>>>>> SFM

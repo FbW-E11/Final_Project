@@ -8,7 +8,7 @@ import {
   FormLabel,
   Input,
   IconButton,
-  InputAdornment,
+  InputAdornment,TextField
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -53,11 +53,9 @@ const Login = ({ setUser }) => {
         <h2 className="registration-title">Login</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
-            <FormLabel className="form-label" htmlFor="username">
-              Email:
-            </FormLabel>
-            <Input
-              type="email"
+            <TextField
+              id="filled-basic"
+              variant="filled"
               placeholder="email"
               {...register("email", { required: true })}
               className="common-input"

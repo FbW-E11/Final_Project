@@ -5,6 +5,7 @@ import Exercise from "./components/Exercise/index";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 
+
 function App() {
   return (
     <Routes>
