@@ -11,7 +11,7 @@
 
 #Database
 
-#client
+#client and server
 
 # Setups
 
@@ -100,3 +100,5 @@ NOT A tEST AGAIN
 {
   savedWorkouts : ref : "Workout"
 }
+
+//test

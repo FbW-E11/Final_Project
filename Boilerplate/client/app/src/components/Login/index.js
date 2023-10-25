@@ -8,11 +8,11 @@ import {
   FormLabel,
   Input,
   IconButton,
-  InputAdornment,TextField
+  InputAdornment,
+  TextField,
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-
 
 // Rest of your component code
 
@@ -23,7 +23,7 @@ const Login = ({ setUser }) => {
 
   const loginUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5001/login`, data, {
+      const response = await axios.post(`http://localhost:5002/login`, data, {
         withCredentials: true,
       });
       return response.data; // Return data from the response, not the entire response object
@@ -41,10 +41,9 @@ const Login = ({ setUser }) => {
   const onSubmit = async (data) => {
     console.log(data);
     const user = await loginUser(data);
-    if (user) {
-      setUser(user);
-      navigate("/exercise");
-    }
+    /*if (user) {
+      setUser(user);*/
+    navigate("/exercise");
   };
 
   return (
@@ -95,7 +94,6 @@ const Login = ({ setUser }) => {
             </Link>
           </Button>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
-
         </form>
       </div>
     </>

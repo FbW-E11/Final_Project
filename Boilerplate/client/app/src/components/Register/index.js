@@ -18,7 +18,7 @@ const Register = () => {
 
   const SignUpUser = async (data) => {
     try {
-      const response = await axios.post("http://localhost:5001/register", data);
+      const response = await axios.post("http://localhost:5002/register", data);
       console.log("response from register is", response);
 
       if (response.data) {
@@ -279,4 +279,3 @@ const Register = () => {
 };
 
 export default Register;
-
