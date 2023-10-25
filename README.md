@@ -11,7 +11,7 @@
 
 #Database
 
-#client
+#client and server
 
 # Setups
 
