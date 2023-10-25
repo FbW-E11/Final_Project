@@ -8,7 +8,7 @@ const ExerciseSchema = new Schema({
   equipment: {
     type: String,
     required: true,
-    enum: ["dumbbells", "ropes", "bars", "barbell", "kettlebell"],
+    enum: ["dumbbell", "ropes", "bars", "barbell", "kettlebell","bodyweight","Bench Press",]
   },
   muscle: {
     type: String,
@@ -25,11 +25,11 @@ const ExerciseSchema = new Schema({
     required: true,
     enum: ["strength", "weight-loss", "building muscles", "athletic", "custom"],
   },
-  image: {
+  imageUrl: {
     type: String,
     required: true,
   },
-  video: {
+  videoUrl: {
     type: String,
     required: true,
   },
