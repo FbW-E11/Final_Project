@@ -18,7 +18,7 @@ const Register = () => {
 
   const SignUpUser = async (data) => {
     try {
-      const response = await axios.post("http://localhost:5001/register", data);
+      const response = await axios.post("http://localhost:5002/register", data);
       console.log("response from register is", response);
 
       if (response.data) {
@@ -261,7 +261,7 @@ const Register = () => {
             variant="contained"
             type="submit"
             style={{
-              backgroundColor: "pink",
+              backgroundColor: "#0056b3",
               color: "black",
               boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
             }}
@@ -279,4 +279,3 @@ const Register = () => {
 };
 
 export default Register;
-
