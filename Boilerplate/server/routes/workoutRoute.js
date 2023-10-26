@@ -7,10 +7,10 @@ router.get("/getall",  async (req, res) => {
   const allExercises = await Exercise.find()
   res.json(allExercises)
 });
-router.get("/exercise/:muscle",  async (req, res) => {
+router.get("/getByMuscle/:muscle",  async (req, res) => {
   const muscle = req.params.muscle
   console.log(req.params)
-  const allExercises = await Exercise.findOne({muscle :muscle})
+  const allExercises = await Exercise.find({muscle :muscle})
   res.json(allExercises)
 });
 router.post(

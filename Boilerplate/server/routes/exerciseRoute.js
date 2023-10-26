@@ -8,10 +8,10 @@ router.get("/getall",  async (req, res) => {
   res.json(allExercises)
 });
 
-router.get("/muscle/:muscle",  async (req, res) => {
+router.get("/getByMuscle/:muscle",  async (req, res) => {
   const muscle = req.params.muscle
   console.log(req.params)
-  const allExercises = await Exercise.find().where({muscle :muscle})
+  const allExercises = await Exercise.find({muscle :muscle})
   res.json(allExercises)
 });
 
