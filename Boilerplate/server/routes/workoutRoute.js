@@ -2,6 +2,8 @@ import express from "express";
 import { check, validationResult } from "express-validator";
 import Exercise from "../model/Exercise.js";
 const router = express.Router();
+
+
 // Create a new exercise
 router.get("/getall",  async (req, res) => {
   const allExercises = await Exercise.find()

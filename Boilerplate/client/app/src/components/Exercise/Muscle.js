@@ -72,4 +72,4 @@ const MuscleComponent = () => {
     </div>
   );
 };
-export default MuscleComponent;
+export default ExerciseComponent;

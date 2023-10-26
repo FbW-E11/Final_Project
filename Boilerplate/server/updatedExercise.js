@@ -5,6 +5,8 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import { json } from "express";
 import Exercise from "./model/Exercise.js";
+
+
 mongoose
   //.connect("mongodb://localhost:27017/Final-project-DataBase")
   .connect(
