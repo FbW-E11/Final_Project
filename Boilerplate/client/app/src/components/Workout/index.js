@@ -162,7 +162,7 @@ function Workout() {
 
         <div className="contact-container" id="contact">
           <h2>Contact Us</h2>
-          <p>Address: von-lernen staraße, 99, Dortmund, 42558</p>
+          <p>Address: Von-Lernen Straße, 99, Dortmund, 42558</p>
           <p>Phone: +1-123-456-7890</p>
           <p>Email: info@myfitnesswebsite.com</p>
           {/* You can add additional contact information or a contact form here. */}
