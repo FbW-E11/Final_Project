@@ -49,6 +49,7 @@ const Login = ({ setUser }) => {
   return (
     <>
       <div className="registration-container">
+      <h2>Welcome to BeFit</h2>
         <h2 className="registration-title">Login</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
