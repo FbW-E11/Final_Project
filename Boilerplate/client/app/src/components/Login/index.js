@@ -43,7 +43,7 @@ const Login = ({ setUser }) => {
     const user = await loginUser(data);
     /*if (user) {
       setUser(user);*/
-    navigate("/exercise");
+    navigate("/exercise/muscle");
   };
 
   return (
