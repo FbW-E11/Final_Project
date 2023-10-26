@@ -43,12 +43,13 @@ const Login = ({ setUser }) => {
     const user = await loginUser(data);
     /*if (user) {
       setUser(user);*/
-    navigate("/exercise");
+    navigate("/exercise/muscle");
   };
 
   return (
     <>
       <div className="registration-container">
+      <h2>Welcome to BeFit</h2>
         <h2 className="registration-title">Login</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
