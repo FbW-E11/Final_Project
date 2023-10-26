@@ -14,21 +14,20 @@ import {
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
-// Rest of your component code
-
 const Login = ({ setUser }) => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
 
   const loginUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5002/login`, data, {
+      const response = await axios.post(`http://localhost:5005/login`, data, {
         withCredentials: true,
       });
-      return response.data; // Return data from the response, not the entire response object
+      return response.data;
     } catch (error) {
-      setErrorMessage("Incorrect email or password. Please try again."); // Set error message
+      setErrorMessage("Incorrect email or password. Please try again.");
     }
   };
 
@@ -39,10 +38,13 @@ const Login = ({ setUser }) => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
+    if (data.password.length < 8) {
+      setPasswordError("*Password or Email not correct");
+      return;
+    }
+
     const user = await loginUser(data);
-    /*if (user) {
-      setUser(user);*/
+    // Handle user authentication and navigation here
     navigate("/exercise");
   };
 
@@ -67,7 +69,7 @@ const Login = ({ setUser }) => {
             <Input
               type={showPassword ? "text" : "password"}
               placeholder="password"
-              {...register("password", { required: true, min: 8 })}
+              {...register("password", { required: true })}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -80,6 +82,7 @@ const Login = ({ setUser }) => {
               }
               className="common-input"
             />
+            {passwordError && <p className="error-message">{passwordError}</p>}
           </div>
 
           <Button variant="contained" type="submit">
