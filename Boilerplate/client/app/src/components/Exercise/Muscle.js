@@ -1,26 +1,33 @@
+
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import "../Exercise/style.css";
-const ExerciseComponent = () => {
+import {Button,Input,} from "@mui/material";
+const MuscleComponent = () => {
   const [user, setUser] = useState(null);
+  const [muscleInput, setMuscleInput] = useState("biceps");
   const handleInputChange = (event) => {
     const data = event.target.value;
-    setUser(data);
+    setMuscleInput(data);
   };
-  const [exerciseData, setExerciseData] = useState(null);
+  const handleSubmit=()=>{
+    fetchDataFromAPI();
+  }
+  const [exerciseData, setExerciseData] = useState();
+  const fetchDataFromAPI = async () => {
+    try {
+      const response = await fetch("http://localhost:5002/exercise/muscle/"+ muscleInput);
+      const data = await response.json();
+      console.log(data);
+      setExerciseData(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      // Handle errors as needed
+    }
+  };
   //Load data from local storage on component mount
   useEffect(() => {
-    const fetchDataFromAPI = async () => {
-      try {
-        const response = await fetch("http://localhost:5002/exercise");
-        const data = await response.json();
-        console.log(data);
-        setExerciseData(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        // Handle errors as needed
-      }
-    };
+  
     fetchDataFromAPI();
   }, []);
 
@@ -29,8 +36,13 @@ const ExerciseComponent = () => {
       {exerciseData && (
         <div>
           <div>
-            <h2>Welcome {user}</h2>
-            <input type="text" onChange={handleInputChange} />
+            <h2>Welcome to BeFit Fitness App {user}</h2>
+            <Input
+        type="text"
+        name="serach"
+        onChange={handleInputChange}
+        placeholder="type muscle type"/>
+            <Button onClick={handleSubmit}>Search</Button>
           </div>
 
           {exerciseData.map((exercise, i) => (
@@ -60,4 +72,4 @@ const ExerciseComponent = () => {
     </div>
   );
 };
-export default ExerciseComponent;
+export default MuscleComponent;
