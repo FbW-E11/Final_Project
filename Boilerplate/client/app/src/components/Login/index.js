@@ -22,7 +22,7 @@ const Login = ({ setUser }) => {
 
   const loginUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5005/login`, data, {
+      const response = await axios.post(`http://localhost:5006/login`, data, {
         withCredentials: true,
       });
       return response.data;
@@ -45,7 +45,7 @@ const Login = ({ setUser }) => {
 
     const user = await loginUser(data);
     // Handle user authentication and navigation here
-    navigate("/exercise");
+    navigate("/exercise/muscle");
   };
 
   return (
