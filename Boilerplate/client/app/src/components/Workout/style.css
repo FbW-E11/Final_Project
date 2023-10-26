@@ -6,6 +6,7 @@ body {
   flex-direction: column;
   justify-content: center; /* Vertically center the content */
   min-height: 100vh;
+  background-image: url(./assets/workingoutedit.jpg);
   background-position: center;
   background-size: cover;
   }
@@ -23,6 +24,7 @@ body {
   padding: 65px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  background-image: url(./assets/weightsedit.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -217,4 +219,4 @@ body {
 /* Apply the animation to the element when the shake class is added */
 .shake {
   animation: shake 0.5s;
-}
+  }
