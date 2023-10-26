@@ -6,7 +6,6 @@ body {
   flex-direction: column;
   justify-content: center; /* Vertically center the content */
   min-height: 100vh;
-  background-image: url(./assets/blurred.jpg);
   background-position: center;
   background-size: cover;
   }
@@ -24,7 +23,6 @@ body {
   padding: 65px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background-image: url(./assets/weights.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
