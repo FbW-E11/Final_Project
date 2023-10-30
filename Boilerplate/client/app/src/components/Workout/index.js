@@ -13,13 +13,12 @@ import DumbbellIcon from "@mui/icons-material/FitnessCenter";
 
 function Workout() {
   const navigate = useNavigate();
-  
-
   const onSubmit = () => {
     navigate("/home");
   };
   return (
     <div className="app-container">
+      
       <header className="header">
         <nav className="navbar">
           <ul className="nav-list">
@@ -159,7 +158,12 @@ function Workout() {
             success.
           </p>
         </div>
-
+        <button
+          className="next-button"
+          onClick={onSubmit} // Use the onSubmit function from the workout object
+        >
+          Next
+        </button>
         <div className="contact-container" id="contact">
           <h2>Contact Us</h2>
           <p>Address: Von-Lernen Straße, 99, Dortmund, 42558</p>
@@ -167,13 +171,6 @@ function Workout() {
           <p>Email: info@myfitnesswebsite.com</p>
           {/* You can add additional contact information or a contact form here. */}
         </div>
-
-        <button
-          className="next-button"
-          onClick={onSubmit} // Use the onSubmit function from the workout object
-        >
-          Next
-        </button>
       </main>
       <footer className="footer">
         <div className="social-icons">

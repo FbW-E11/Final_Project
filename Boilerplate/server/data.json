@@ -40,7 +40,7 @@
       {
         "time": { "n": 20 },
         "equipment": "bodyweight",
-        "muscle": "biceps",
+        "muscle": "triceps",
         "fitness_level": "intermediate",
         "fitness_goals": "building muscles",
         "exerciseType": "Push-Ups",
@@ -160,6 +160,18 @@
         "exerciseType": "Bench Press",
         "videoUrl": "https://youtube.com/shorts/EdDqD4aKwxM?si=iOgW8pkNY6iO5KYQ",
         "imageUrl": "https://www.shutterstock.com/image-illustration/closegrip-barbell-bench-press-3d-260nw-430936051.jpg",
+        "duration": "4 sets of 10 reps",
+        "description": "Bench Press: The bench press is a compound exercise that primarily works the chest, shoulders, and triceps. It's a fundamental exercise for building upper body strength."
+      },
+      {
+        "time": { "n": 20 },
+        "equipment": "dumbbell",
+        "muscle": "triceps",
+        "fitness_level": "intermediate",
+        "fitness_goals": "building muscles",
+        "exerciseType": "Bench Press",
+        "videoUrl": "https://youtube.com/shorts/3zK-QobOkHg?si=isdVavYllLwct7ZY",
+        "imageUrl": "https://fitnessvolt.com/wp-content/uploads/2019/04/decline-dumbbell-triceps-extension.jpg",
         "duration": "4 sets of 10 reps",
         "description": "Bench Press: The bench press is a compound exercise that primarily works the chest, shoulders, and triceps. It's a fundamental exercise for building upper body strength."
       }
