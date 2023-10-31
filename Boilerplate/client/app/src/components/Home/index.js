@@ -7,7 +7,6 @@ function Home() {
       <div className="app-container">
         <Login />
       </div>
-    
   );
 }
 
