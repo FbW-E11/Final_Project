@@ -32,14 +32,12 @@ form {
 label {
   font-size: 16px;
   margin-bottom: 8px;
-
   color: rgb(170, 122, 130); /* Dark gray text color */
 }
 
 input,
 select {
   padding: 10px;
-
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -63,6 +61,7 @@ select:focus {
 /* Style the submit button with a transition effect */
 button {
   background-color: pink;
+  width: 250px;
   color: black;
   padding: 10px 20px;
   border: none;
