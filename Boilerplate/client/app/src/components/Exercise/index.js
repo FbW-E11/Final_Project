@@ -12,7 +12,7 @@ const ExerciseComponent = () => {
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
-        const response = await fetch("http://localhost:5002/exercise");
+        const response = await fetch("http://localhost:5006/exercise");
         const data = await response.json();
         console.log(data);
         setExerciseData(data);

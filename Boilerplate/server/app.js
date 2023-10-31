@@ -32,7 +32,6 @@ mongoose
     console.log("error", err);
   });
 
-app.listen(5002, (req, res) => {
-  console.log("listening on port 5002");
-
+app.listen(5006, (req, res) => {
+  console.log("listening on port 5006");
 });
