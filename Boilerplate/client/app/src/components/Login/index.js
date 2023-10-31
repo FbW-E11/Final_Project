@@ -12,25 +12,38 @@ import {
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-
 // Rest of your component code
-
-
-
-  const [passwordError, setPasswordError] = useState("");
-
-
-
+const Login = ({ setUser }) => {
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const loginUser = async (data) => {
+    try {
+      const response = await axios.post(`http://localhost:5002/login`, data, {
+        withCredentials: true,
+      });
+      return response.data; // Return data from the response, not the entire response object
+    } catch (error) {
+      setErrorMessage("Incorrect email or password. Please try again."); // Set error message
+    }
+  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = async (data) => {
+    console.log(data);
+    const user = await loginUser(data);
     /*if (user) {
       setUser(user);*/
-
     navigate("/exercise/muscle");
   };
   return (
     <>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-group">
+          <div className="form-group">
             <TextField
               id="filled-basic"
               variant="filled"
@@ -40,11 +53,10 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
             />
           </div>
           <div className="form-group">
-            
             <Input
               type={showPassword ? "text" : "password"}
               placeholder="password"
-              {...register("password", { required: true })}
+              {...register("password", { required: true, min: 8 })}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -57,11 +69,13 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
               }
               className="common-input"
             />
-            {passwordError && <p className="error-message">{passwordError}</p>}
           </div>
           <div className="signButton">
             {
-              <Button variant="contained" type="submit" style={{ marginRight: '100px'}}
+              <Button
+                variant="contained"
+                type="submit"
+                style={{ marginRight: "100px" }}
               >
                 SignIn
               </Button>
@@ -70,7 +84,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
               <Button variant="contained">
                 <Link
                   to="/register"
-                  style={{  textDecoration: "none", color: "white" }}
+                  style={{ textDecoration: "none", color: "white" }}
                 >
                   SignUp
                 </Link>
