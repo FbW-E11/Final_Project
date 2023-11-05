@@ -1,5 +1,4 @@
 import React from "react";
-import "../Workout/style.css";
 import { useNavigate } from "react-router-dom";
 import MultiStepForm from "../MultiStep Form/MultiStepForm.js";
 import {
