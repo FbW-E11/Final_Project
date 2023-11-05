@@ -17,7 +17,7 @@ const Register = () => {
   const [passwordColor, setPasswordColor] = useState("red");
   const SignUpUser = async (data) => {
     try {
-      const response = await axios.post("http://localhost:3000/register", data);
+      const response = await axios.post("http://localhost:5002/register", data);
       if (response.data) {
         return response.data;
       } else {
@@ -60,7 +60,6 @@ const Register = () => {
 
       <form onSubmit={handleSubmit(onSubmit)} className="wave-effect-form">
       <h2>REGISTER IF YOU ARE NOT A MEMBER</h2>
-      
         <div>
           <Controller
             name="fullName"

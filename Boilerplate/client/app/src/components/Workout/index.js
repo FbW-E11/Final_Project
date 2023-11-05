@@ -1,5 +1,4 @@
 import React from "react";
-import "../Workout/style.css";
 import { useNavigate } from "react-router-dom";
 import MultiStepForm from "../MultiStep Form/MultiStepForm.js";
 import {
@@ -45,7 +44,7 @@ function Workout() {
         </p>
       </header>
       <main>
-        <div className="content-container" id="services">
+        <div className="content-container" >
           <h2>Our Services</h2>
           <p>Explore a wide range of fitness services, including:</p>
           <ul>

@@ -38,32 +38,44 @@ const MuscleComponent = () => {
       {exerciseData && (
         <div>
           <div>
-            <h2 className="message">Welcome to BeFit Fitness App {user}</h2>
-            <Input className="input-container1"
-        type="text" 
-        name="serach"
+            <h2 className="font">Welcome to BeFit Fitness App {user}</h2>
+            <Input
+        type="text"
+        name="search"
         onChange={handleInputChange}
-        placeholder="type muscle type"/>
-            <Button className="search" onClick={handleSubmit}>Search</Button>
+        placeholder="Enter muscle name..."
+        className="custom-input"/>
+
+            <Button style={{
+          color: "black", // Text color
+          backgroundColor: "lightgray", // Background color
+          fontSize: "14px", // Font size
+          padding: "6px 16px", // Padding
+          border: "white", // Border
+          borderRadius: "5px", // Border radius
+          cursor: "pointer", // Cursor style
+                textAlign: "center", // Center the text horizontally
+          marginLeft:"10px"
+        }}  onClick={handleSubmit}>Search</Button>
           </div>
 
           {exerciseData.map((exercise, i) => (
-            <div className="container1">
-              <ul className="list-container1">
+            <div className="cont">
+              <ul className="list-cont">
                 <li key={i}></li>
                 <li>
                   <li>
                     <img src={exercise.imageUrl} />
                   </li>
-                  < ReactPlayer className="video" url={exercise.videoUrl} />
+                  <ReactPlayer className="react-player" url={exercise.videoUrl} />
                 </li>
                 <li key={i}></li>
                 <li>Time: {exercise.time.n}</li>
-                <li>{exercise.equipment}</li>
+                <li>Equipment: {exercise.equipment}</li>
                 <li>{exercise.description}</li>
-                <li>{exercise.muscle}</li>
-                <li>{exercise.fitness_level}</li>
-                <li>{exercise.fitness_goals}</li>
+                <li>Muscle: {exercise.muscle}</li>
+                <li>Level: {exercise.fitness_level}</li>
+                <li>Goal: {exercise.fitness_goals}</li>
                 <li>{exercise.exerciseType}</li>
                 <li>{exercise.duration}</li>
               </ul>
@@ -75,4 +87,6 @@ const MuscleComponent = () => {
     </div>
   );
 };
-export default MuscleComponent;
+ export default MuscleComponent; 
+
+ 

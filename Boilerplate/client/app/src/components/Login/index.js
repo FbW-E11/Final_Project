@@ -58,7 +58,7 @@ const Login = ({ setUser }) => {
               placeholder="email"
               {...register("email", { required: true })}
               style={{ color: "white", fontSize: "20px" }}
-              className="commonInput" 
+              className="commonInput"
             />
           </div>
 
@@ -73,7 +73,7 @@ const Login = ({ setUser }) => {
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
-                        style={{width:"10px"}}
+                    style={{ width: "10px" }}
                     aria-label="toggle password visibility"
                     onClick={() => setShowPassword(!showPassword)}
                   >
@@ -81,14 +81,13 @@ const Login = ({ setUser }) => {
                   </IconButton>
                 </InputAdornment>
               }
-               className="commonInput" 
+              className="commonInput"
             />
           </div>
 
           <div className="signButton">
             {
-              <Button variant="contained" type="submit" 
-              >
+              <Button variant="contained" type="submit">
                 SignIn
               </Button>
             }
@@ -97,7 +96,7 @@ const Login = ({ setUser }) => {
               <Button variant="contained">
                 <Link
                   to="/register"
-                  style={{  textDecoration: "none", color: "white" }}
+                  style={{ textDecoration: "none", color: "white" }}
                 >
                   SignUp
                 </Link>
