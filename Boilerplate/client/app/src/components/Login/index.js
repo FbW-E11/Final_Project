@@ -23,7 +23,7 @@ const Login = ({ setUser }) => {
 
   const loginUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5010/login`, data, {
+      const response = await axios.post(`http://localhost:5002/login`, data, {
         withCredentials: true,
       });
       return response.data; // Return data from the response, not the entire response object
@@ -60,15 +60,10 @@ const Login = ({ setUser }) => {
               className="commonInput"
             />
           </div>
-<<<<<<< HEAD
-          <div className="formGroup">
-            <FormLabel className="formedLabel" htmlFor="password"></FormLabel>
-=======
 
           <div className="formGroup">
             <FormLabel className="formedLabel" htmlFor="password"></FormLabel>
 
->>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
             <Input
               type={showPassword ? "text" : "password"}
               placeholder="password"
@@ -114,8 +109,5 @@ const Login = ({ setUser }) => {
     </>
   );
 };
-<<<<<<< HEAD
-=======
 
->>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
 export default Login;

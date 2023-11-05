@@ -6,7 +6,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-image: url(../src/components/Workout/assets/workingoutedit.jpg);
+  background-image: url(../src/assets/workingoutedit.jpg);
   background-position: center;
   background-size: cover;
   margin: 80px;
@@ -20,7 +20,7 @@ body {
     padding: 65px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url(../src/components/Workout/assets/weightsedit.jpg);
+    background-image: url(../src/assets/weightsedit.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

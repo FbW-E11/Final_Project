@@ -32,20 +32,6 @@ form h3 {
   font-weight: 500;
   line-height: 42px;
   text-align: center; */
-<<<<<<< HEAD
-}
-
-/* Form elements styles */
-.formGroup {
-  margin-bottom: 30px;
-}
-
-.formedLabel {
- /*  height: 25px; */
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-=======
 }
 
 /* Form elements styles */
@@ -147,4 +133,3 @@ input[type="password"] {
   transform-origin: left;
 }
  */
->>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
