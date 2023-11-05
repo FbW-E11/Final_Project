@@ -12,7 +12,7 @@ function App() {
       <Route path="/" element={<Workout />}></Route>
       <Route path="/register" element={<Register />}></Route>
       <Route path="/home" element={<Home />}></Route>
-      
+
       <Route path="/exercise/muscle" element={<MuscleComponent />}></Route>
     </Routes>
   );
