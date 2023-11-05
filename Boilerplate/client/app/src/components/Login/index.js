@@ -20,7 +20,7 @@ const Login = ({ setUser }) => {
   const [showPassword, setShowPassword] = useState(false);
   const loginUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5003/login`, data, {
+      const response = await axios.post(`http://localhost:5010/login`, data, {
         withCredentials: true,
       });
       return response.data; // Return data from the response, not the entire response object

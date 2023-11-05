@@ -16,7 +16,7 @@ const MuscleComponent = () => {
   const [exerciseData, setExerciseData] = useState();
   const fetchDataFromAPI = async () => {
     try {
-      const response = await fetch("http://localhost:5009/exercise/muscle/"+ muscleInput);
+      const response = await fetch("http://localhost:5010/exercise/muscle/"+ muscleInput);
       const data = await response.json();
       console.log(data);
       setExerciseData(data);
