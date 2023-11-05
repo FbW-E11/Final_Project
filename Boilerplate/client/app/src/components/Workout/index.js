@@ -191,7 +191,7 @@ function Workout() {
           </a>
         </div>
 
-        <p>&copy; 2023 My Fitness Website</p>
+        <p>&copy; 2023 BeFit Fitness App</p>
       </footer>
     </div>
   );

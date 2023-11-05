@@ -60,6 +60,7 @@ const Register = () => {
 
       <form onSubmit={handleSubmit(onSubmit)} className="wave-effect-form">
       <h2>REGISTER IF YOU ARE NOT A MEMBER</h2>
+      
         <div>
           <Controller
             name="fullName"

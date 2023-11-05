@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import "../Exercise/style.css";
 import {Button,Input,} from "@mui/material";
+
 const MuscleComponent = () => {
   const [user, setUser] = useState(null);
   const [muscleInput, setMuscleInput] = useState("biceps");
@@ -33,28 +34,28 @@ const MuscleComponent = () => {
   }, []);
 
   return (
-    <div>
+    <div className="main-container">
       {exerciseData && (
         <div>
           <div>
-            <h2>Welcome to BeFit Fitness App {user}</h2>
-            <Input
-        type="text"
+            <h2 className="message">Welcome to BeFit Fitness App {user}</h2>
+            <Input className="input-container1"
+        type="text" 
         name="serach"
         onChange={handleInputChange}
         placeholder="type muscle type"/>
-            <Button onClick={handleSubmit}>Search</Button>
+            <Button className="search" onClick={handleSubmit}>Search</Button>
           </div>
 
           {exerciseData.map((exercise, i) => (
-            <div className="container">
-              <ul className="list-container">
+            <div className="container1">
+              <ul className="list-container1">
                 <li key={i}></li>
                 <li>
                   <li>
                     <img src={exercise.imageUrl} />
                   </li>
-                  <ReactPlayer url={exercise.videoUrl} />
+                  < ReactPlayer className="video" url={exercise.videoUrl} />
                 </li>
                 <li key={i}></li>
                 <li>Time: {exercise.time.n}</li>
@@ -70,6 +71,7 @@ const MuscleComponent = () => {
           ))}
         </div>
       )}
+      
     </div>
   );
 };
