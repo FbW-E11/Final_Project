@@ -12,6 +12,7 @@ app.use(
   cors({
     origin: "http://localhost:3000",
     credentials: true,
+    optionSuccessStatus:200
   })
 );
 app.use("/login", loginRoute);
@@ -32,6 +33,6 @@ mongoose
     console.log("error", err);
   });
 
-app.listen(5009, (req, res) => {
-  console.log("listening on port 5009");
+app.listen(5010, (req, res) => {
+  console.log("listening on port 5010");
 });

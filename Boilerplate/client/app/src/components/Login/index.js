@@ -13,14 +13,17 @@ import {
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+
 // Rest of your component code
+
 const Login = ({ setUser }) => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
   const loginUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5003/login`, data, {
+      const response = await axios.post(`http://localhost:5010/login`, data, {
         withCredentials: true,
       });
       return response.data; // Return data from the response, not the entire response object
@@ -28,11 +31,13 @@ const Login = ({ setUser }) => {
       setErrorMessage("Incorrect email or password. Please try again."); // Set error message
     }
   };
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = async (data) => {
     console.log(data);
     const user = await loginUser(data);
@@ -40,6 +45,7 @@ const Login = ({ setUser }) => {
       setUser(user);*/
     navigate("/exercise/muscle");
   };
+
   return (
     <>
       <div>
@@ -54,8 +60,15 @@ const Login = ({ setUser }) => {
               className="commonInput"
             />
           </div>
+<<<<<<< HEAD
           <div className="formGroup">
             <FormLabel className="formedLabel" htmlFor="password"></FormLabel>
+=======
+
+          <div className="formGroup">
+            <FormLabel className="formedLabel" htmlFor="password"></FormLabel>
+
+>>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
             <Input
               type={showPassword ? "text" : "password"}
               placeholder="password"
@@ -75,12 +88,14 @@ const Login = ({ setUser }) => {
               className="commonInput"
             />
           </div>
+
           <div className="signButton">
             {
               <Button variant="contained" type="submit">
                 SignIn
               </Button>
             }
+
             {
               <Button variant="contained">
                 <Link
@@ -92,10 +107,15 @@ const Login = ({ setUser }) => {
               </Button>
             }
           </div>
+
           {errorMessage && <p className="error-message">{errorMessage}</p>}
         </form>
       </div>
     </>
   );
 };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
 export default Login;

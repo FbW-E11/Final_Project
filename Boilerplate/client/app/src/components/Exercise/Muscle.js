@@ -16,7 +16,7 @@ const MuscleComponent = () => {
   const [exerciseData, setExerciseData] = useState();
   const fetchDataFromAPI = async () => {
     try {
-      const response = await fetch("http://localhost:5009/exercise/muscle/"+ muscleInput);
+      const response = await fetch("http://localhost:5010/exercise/muscle/"+ muscleInput);
       const data = await response.json();
       console.log(data);
       setExerciseData(data);
@@ -37,6 +37,7 @@ const MuscleComponent = () => {
         <div>
           <div>
             <h2 className="font">Welcome to BeFit Fitness App {user}</h2>
+<<<<<<< HEAD
             <Input 
         type="text"
               name="search"
@@ -46,6 +47,16 @@ const MuscleComponent = () => {
             />
         <Button
         style={{
+=======
+            <Input
+        type="text"
+        name="search"
+        onChange={handleInputChange}
+        placeholder="Enter muscle name..."
+        className="custom-input"/>
+
+            <Button style={{
+>>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
           color: "black", // Text color
           backgroundColor: "lightgray", // Background color
           fontSize: "14px", // Font size
@@ -55,11 +66,15 @@ const MuscleComponent = () => {
           cursor: "pointer", // Cursor style
                 textAlign: "center", // Center the text horizontally
           marginLeft:"10px"
+<<<<<<< HEAD
         }}
         onClick={handleSubmit}
       >
         Search
       </Button>
+=======
+        }}  onClick={handleSubmit}>Search</Button>
+>>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
           </div>
 
           {exerciseData.map((exercise, i) => (
@@ -70,6 +85,7 @@ const MuscleComponent = () => {
                   <li>
                     <img src={exercise.imageUrl} />
                   </li>
+<<<<<<< HEAD
                   
                   <ReactPlayer className="react-player"  url={exercise.videoUrl} />
                   </li>
@@ -80,6 +96,17 @@ const MuscleComponent = () => {
                 <li>Muscle:{exercise.muscle}</li>
                 <li>Level{exercise.fitness_level}</li>
                 <li>{exercise.fitness_goals}</li>
+=======
+                  <ReactPlayer className="react-player" url={exercise.videoUrl} />
+                </li>
+                <li key={i}></li>
+                <li>Time: {exercise.time.n}</li>
+                <li>Equipment: {exercise.equipment}</li>
+                <li>{exercise.description}</li>
+                <li>Muscle: {exercise.muscle}</li>
+                <li>Level: {exercise.fitness_level}</li>
+                <li>Goal: {exercise.fitness_goals}</li>
+>>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
                 <li>{exercise.exerciseType}</li>
                 <li>{exercise.duration}</li>
               </ul>
@@ -90,4 +117,6 @@ const MuscleComponent = () => {
     </div>
   );
 };
-export default MuscleComponent;
+ export default MuscleComponent; 
+
+ 
