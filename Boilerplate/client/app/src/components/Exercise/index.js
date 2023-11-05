@@ -12,7 +12,7 @@ const ExerciseComponent = () => {
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
-        const response = await fetch("http://localhost:5006/exercise");
+        const response = await fetch("http://localhost:500/exercise");
         const data = await response.json();
         console.log(data);
         setExerciseData(data);
@@ -45,11 +45,11 @@ const ExerciseComponent = () => {
                 </li>
                 <li key={i}></li>
                 <li>Time: {exercise.time.n}</li>
-                <li>{exercise.equipment}</li>
+                <li>Equipment:{exercise.equipment}</li>
                 <li>{exercise.description}</li>
-                <li>{exercise.muscle}</li>
+                <li>Muscle:{exercise.muscle}</li>
                 <li>{exercise.fitness_level}</li>
-                <li>{exercise.fitness_goals}</li>
+                <li>Strength:{exercise.fitness_goals}</li>
                 <li>{exercise.exerciseType}</li>
                 <li>{exercise.duration}</li>
               </ul>

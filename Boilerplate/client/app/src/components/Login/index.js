@@ -5,6 +5,7 @@ import "../Login/style.css";
 import { useNavigate, Link } from "react-router-dom";
 import {
   Button,
+  FormLabel,
   Input,
   IconButton,
   InputAdornment,
@@ -19,7 +20,7 @@ const Login = ({ setUser }) => {
   const [showPassword, setShowPassword] = useState(false);
   const loginUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5002/login`, data, {
+      const response = await axios.post(`http://localhost:5003/login`, data, {
         withCredentials: true,
       });
       return response.data; // Return data from the response, not the entire response object
@@ -43,23 +44,27 @@ const Login = ({ setUser }) => {
     <>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-group">
+          <div className="formGroup">
             <TextField
               id="filled-basic"
               variant="filled"
               placeholder="email"
               {...register("email", { required: true })}
-              className="common-input"
+              style={{ color: "white", fontSize: "20px" }}
+              className="commonInput"
             />
           </div>
-          <div className="form-group">
+          <div className="formGroup">
+            <FormLabel className="formedLabel" htmlFor="password"></FormLabel>
             <Input
               type={showPassword ? "text" : "password"}
               placeholder="password"
               {...register("password", { required: true, min: 8 })}
+              style={{ color: "white", fontSize: "20px" }}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
+                    style={{ width: "10px" }}
                     aria-label="toggle password visibility"
                     onClick={() => setShowPassword(!showPassword)}
                   >
@@ -67,16 +72,12 @@ const Login = ({ setUser }) => {
                   </IconButton>
                 </InputAdornment>
               }
-              className="common-input"
+              className="commonInput"
             />
           </div>
           <div className="signButton">
             {
-              <Button
-                variant="contained"
-                type="submit"
-                style={{ marginRight: "100px" }}
-              >
+              <Button variant="contained" type="submit">
                 SignIn
               </Button>
             }
