@@ -5,6 +5,7 @@ import "../Login/style.css";
 import { useNavigate, Link } from "react-router-dom";
 import {
   Button,
+  FormLabel,
   Input,
   IconButton,
   InputAdornment,
@@ -15,39 +16,63 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 // Rest of your component code
 
+const Login = ({ setUser }) => {
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
+  const loginUser = async (data) => {
+    try {
+      const response = await axios.post(`http://localhost:5002/login`, data, {
+        withCredentials: true,
+      });
+      return response.data; // Return data from the response, not the entire response object
+    } catch (error) {
+      setErrorMessage("Incorrect email or password. Please try again."); // Set error message
+    }
+  };
 
-  const [passwordError, setPasswordError] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-
-
+  const onSubmit = async (data) => {
+    console.log(data);
+    const user = await loginUser(data);
     /*if (user) {
       setUser(user);*/
-
     navigate("/exercise/muscle");
   };
+
   return (
     <>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-group">
+          <div className="formGroup">
             <TextField
               id="filled-basic"
               variant="filled"
               placeholder="email"
               {...register("email", { required: true })}
-              className="common-input"
+              style={{ color: "white", fontSize: "20px" }}
+              className="commonInput"
             />
           </div>
-          <div className="form-group">
-            
+
+          <div className="formGroup">
+            <FormLabel className="formedLabel" htmlFor="password"></FormLabel>
+
             <Input
               type={showPassword ? "text" : "password"}
               placeholder="password"
-              {...register("password", { required: true })}
+              {...register("password", { required: true, min: 8 })}
+              style={{ color: "white", fontSize: "20px" }}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
+                    style={{ width: "10px" }}
                     aria-label="toggle password visibility"
                     onClick={() => setShowPassword(!showPassword)}
                   >
@@ -55,32 +80,34 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
                   </IconButton>
                 </InputAdornment>
               }
-              className="common-input"
+              className="commonInput"
             />
-            {passwordError && <p className="error-message">{passwordError}</p>}
           </div>
+
           <div className="signButton">
             {
-              <Button variant="contained" type="submit" style={{ marginRight: '100px'}}
-              >
+              <Button variant="contained" type="submit">
                 SignIn
               </Button>
             }
+
             {
               <Button variant="contained">
                 <Link
                   to="/register"
-                  style={{  textDecoration: "none", color: "white" }}
+                  style={{ textDecoration: "none", color: "white" }}
                 >
                   SignUp
                 </Link>
               </Button>
             }
           </div>
+
           {errorMessage && <p className="error-message">{errorMessage}</p>}
         </form>
       </div>
     </>
   );
 };
+
 export default Login;

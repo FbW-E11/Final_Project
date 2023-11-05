@@ -16,7 +16,7 @@ const MuscleComponent = () => {
   const [exerciseData, setExerciseData] = useState();
   const fetchDataFromAPI = async () => {
     try {
-      const response = await fetch("http://localhost:5006/exercise/muscle/"+ muscleInput);
+      const response = await fetch("http://localhost:5002/exercise/muscle/"+ muscleInput);
       const data = await response.json();
       console.log(data);
       setExerciseData(data);
@@ -36,32 +36,44 @@ const MuscleComponent = () => {
       {exerciseData && (
         <div>
           <div>
-            <h2>Welcome to BeFit Fitness App {user}</h2>
+            <h2 className="font">Welcome to BeFit Fitness App {user}</h2>
             <Input
         type="text"
-        name="serach"
+        name="search"
         onChange={handleInputChange}
-        placeholder="type muscle type"/>
-            <Button onClick={handleSubmit}>Search</Button>
+        placeholder="Enter muscle name..."
+        className="custom-input"/>
+
+            <Button style={{
+          color: "black", // Text color
+          backgroundColor: "lightgray", // Background color
+          fontSize: "14px", // Font size
+          padding: "6px 16px", // Padding
+          border: "white", // Border
+          borderRadius: "5px", // Border radius
+          cursor: "pointer", // Cursor style
+                textAlign: "center", // Center the text horizontally
+          marginLeft:"10px"
+        }}  onClick={handleSubmit}>Search</Button>
           </div>
 
           {exerciseData.map((exercise, i) => (
-            <div className="container">
-              <ul className="list-container">
+            <div className="cont">
+              <ul className="list-cont">
                 <li key={i}></li>
                 <li>
                   <li>
                     <img src={exercise.imageUrl} />
                   </li>
-                  <ReactPlayer url={exercise.videoUrl} />
+                  <ReactPlayer className="react-player" url={exercise.videoUrl} />
                 </li>
                 <li key={i}></li>
                 <li>Time: {exercise.time.n}</li>
-                <li>{exercise.equipment}</li>
+                <li>Equipment: {exercise.equipment}</li>
                 <li>{exercise.description}</li>
-                <li>{exercise.muscle}</li>
-                <li>{exercise.fitness_level}</li>
-                <li>{exercise.fitness_goals}</li>
+                <li>Muscle: {exercise.muscle}</li>
+                <li>Level: {exercise.fitness_level}</li>
+                <li>Goal: {exercise.fitness_goals}</li>
                 <li>{exercise.exerciseType}</li>
                 <li>{exercise.duration}</li>
               </ul>
@@ -72,4 +84,6 @@ const MuscleComponent = () => {
     </div>
   );
 };
-export default MuscleComponent;
+ export default MuscleComponent; 
+
+ 

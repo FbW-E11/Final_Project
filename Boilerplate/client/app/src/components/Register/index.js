@@ -13,17 +13,11 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [passwordStrength, setPasswordStrength] = useState(0);
+  const [passwordStrength, setPasswordStrength] = useState("");
   const [passwordColor, setPasswordColor] = useState("red");
   const SignUpUser = async (data) => {
     try {
-
-      const response = await axios.post("http://localhost:3000/register", data);
-
-      const response = await axios.post("http://localhost:5006/register", data);
-      console.log("response from register is", response);
-
-
+      const response = await axios.post("http://localhost:5002/register", data);
       if (response.data) {
         return response.data;
       } else {
@@ -61,7 +55,11 @@ const Register = () => {
   };
   return (
     <div className="centered-text">
+ 
+
+
       <form onSubmit={handleSubmit(onSubmit)} className="wave-effect-form">
+      <h2>REGISTER IF YOU ARE NOT A MEMBER</h2>
         <div>
           <Controller
             name="fullName"
@@ -152,6 +150,7 @@ const Register = () => {
                     endAdornment: (
                       <InputAdornment position="end">
                         <IconButton
+                        style={{width:"5px"}}
                           aria-label="toggle password visibility"
                           onClick={() => setShowPassword(!showPassword)}
                         >
@@ -184,6 +183,7 @@ const Register = () => {
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
+                    style={{width:"5px"}}
                     aria-label="toggle password visibility"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
@@ -198,6 +198,18 @@ const Register = () => {
             }}
           />
         </div>
+
+        <div>
+        <Button style={{ width:"150px", marginTop: "18px" }}
+          variant="contained"
+          type="submit"
+          className="signup-button" // Apply the "signup-button" class
+        >
+          Sign Up
+        </Button>
+        </div>
+
+
         <div className="password-strength-container">
           <div className="password-strength" style={{ color: passwordColor }}>
             Password Strength: {passwordStrength === 0 && "Weak"}
@@ -207,13 +219,7 @@ const Register = () => {
             {passwordStrength === 4 && "Strong"}
           </div>
         </div>
-        <Button
-          variant="contained"
-          type="submit"
-          className="signup-button" // Apply the "signup-button" class
-        >
-          Sign Up
-        </Button>
+
       </form>
       <h4>{message && message}</h4>
     </div>
