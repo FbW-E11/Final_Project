@@ -8,11 +8,11 @@ import {
   FormLabel,
   Input,
   IconButton,
-  InputAdornment,TextField
+  InputAdornment,
+  TextField,
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-
 
 // Rest of your component code
 
@@ -23,7 +23,7 @@ const Login = ({ setUser }) => {
 
   const loginUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5001/login`, data, {
+      const response = await axios.post(`http://localhost:5002/login`, data, {
         withCredentials: true,
       });
       return response.data; // Return data from the response, not the entire response object
@@ -41,37 +41,38 @@ const Login = ({ setUser }) => {
   const onSubmit = async (data) => {
     console.log(data);
     const user = await loginUser(data);
-    if (user) {
-      setUser(user);
-      navigate("/exercise");
-    }
+    /*if (user) {
+      setUser(user);*/
+    navigate("/exercise/muscle");
   };
 
   return (
     <>
-      <div className="registration-container">
-        <h2 className="registration-title">Login</h2>
+      <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-group">
+          <div className="formGroup">
             <TextField
               id="filled-basic"
               variant="filled"
               placeholder="email"
               {...register("email", { required: true })}
-              className="common-input"
+              style={{ color: "white", fontSize: "20px" }}
+              className="commonInput"
             />
           </div>
-          <div className="form-group">
-            <FormLabel className="form-label" htmlFor="password">
-              Password:
-            </FormLabel>
+
+          <div className="formGroup">
+            <FormLabel className="formedLabel" htmlFor="password"></FormLabel>
+
             <Input
               type={showPassword ? "text" : "password"}
               placeholder="password"
               {...register("password", { required: true, min: 8 })}
+              style={{ color: "white", fontSize: "20px" }}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
+                    style={{ width: "10px" }}
                     aria-label="toggle password visibility"
                     onClick={() => setShowPassword(!showPassword)}
                   >
@@ -79,23 +80,30 @@ const Login = ({ setUser }) => {
                   </IconButton>
                 </InputAdornment>
               }
-              className="common-input"
+              className="commonInput"
             />
           </div>
 
-          <Button variant="contained" type="submit">
-            SignIn
-          </Button>
-          <Button variant="contained">
-            <Link
-              to="/register"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              SignUp
-            </Link>
-          </Button>
-          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          <div className="signButton">
+            {
+              <Button variant="contained" type="submit">
+                SignIn
+              </Button>
+            }
 
+            {
+              <Button variant="contained">
+                <Link
+                  to="/register"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  SignUp
+                </Link>
+              </Button>
+            }
+          </div>
+
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
         </form>
       </div>
     </>

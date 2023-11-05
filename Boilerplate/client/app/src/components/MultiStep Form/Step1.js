@@ -13,7 +13,7 @@ const Step1 = ({ formData, setFormData, nextStep }) => {
   };
   return (
     <div>
-      <h2>Step 1: User Info</h2>
+      <h2> Check Your BMI</h2>
       <input
         type="number"
         name="height"
@@ -39,7 +39,7 @@ const Step1 = ({ formData, setFormData, nextStep }) => {
           <p>Obese: 30 or greater</p>
         </div>
       )}
-      <button onClick={nextStep}>Next</button>
+      <button onClick={nextStep}>Gender</button>
     </div>
   );
 };

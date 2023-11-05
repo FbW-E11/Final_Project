@@ -7,7 +7,7 @@ const Step2 = ({ formData, setFormData, nextStep, prevStep }) => {
   };
   return (
     <div>
-      <h2>Step 2: Select Gender</h2>
+      <h2>Select Gender</h2>
       <label>
         <input
           type="radio"
@@ -29,7 +29,7 @@ const Step2 = ({ formData, setFormData, nextStep, prevStep }) => {
         Female
       </label>
       <button onClick={prevStep}>Previous</button>
-      <button onClick={nextStep}>Next</button>
+      <button onClick={nextStep}>Characteristic</button>
     </div>
   );
 };

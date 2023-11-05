@@ -1,5 +1,4 @@
 import React from "react";
-import "../Workout/style.css";
 import { useNavigate } from "react-router-dom";
 import MultiStepForm from "../MultiStep Form/MultiStepForm.js";
 import {
@@ -13,13 +12,12 @@ import DumbbellIcon from "@mui/icons-material/FitnessCenter";
 
 function Workout() {
   const navigate = useNavigate();
-  
-
   const onSubmit = () => {
     navigate("/home");
   };
   return (
     <div className="app-container">
+      
       <header className="header">
         <nav className="navbar">
           <ul className="nav-list">
@@ -46,7 +44,7 @@ function Workout() {
         </p>
       </header>
       <main>
-        <div className="content-container" id="services">
+        <div className="content-container" >
           <h2>Our Services</h2>
           <p>Explore a wide range of fitness services, including:</p>
           <ul>
@@ -79,7 +77,8 @@ function Workout() {
           </ul>
         </div>
         <div className="testimonial-container">
-          <MultiStepForm />
+          
+        <MultiStepForm />
 
           <h2 id="about">About Us</h2>
           <p>
@@ -158,21 +157,19 @@ function Workout() {
             success.
           </p>
         </div>
-
-        <div className="contact-container" id="contact">
-          <h2>Contact Us</h2>
-          <p>Address: von-lernen staraße, 99, Dortmund, 42558</p>
-          <p>Phone: +1-123-456-7890</p>
-          <p>Email: info@myfitnesswebsite.com</p>
-          {/* You can add additional contact information or a contact form here. */}
-        </div>
-
         <button
           className="next-button"
           onClick={onSubmit} // Use the onSubmit function from the workout object
         >
           Next
         </button>
+        <div className="contact-container" id="contact">
+          <h2>Contact Us</h2>
+          <p>Address: Von-Lernen Straße, 99, Dortmund, 42558</p>
+          <p>Phone: +1-123-456-7890</p>
+          <p>Email: info@myfitnesswebsite.com</p>
+          {/* You can add additional contact information or a contact form here. */}
+        </div>
       </main>
       <footer className="footer">
         <div className="social-icons">
