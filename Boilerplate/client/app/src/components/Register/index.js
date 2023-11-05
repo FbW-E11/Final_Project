@@ -17,11 +17,7 @@ const Register = () => {
   const [passwordColor, setPasswordColor] = useState("red");
   const SignUpUser = async (data) => {
     try {
-<<<<<<< HEAD
-      const response = await axios.post("http://localhost:5010/register", data);
-=======
       const response = await axios.post("http://localhost:5002/register", data);
->>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
       if (response.data) {
         return response.data;
       } else {
@@ -202,10 +198,7 @@ const Register = () => {
             }}
           />
         </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
         <div>
         <Button style={{ width:"150px", marginTop: "18px" }}
           variant="contained"
@@ -215,11 +208,8 @@ const Register = () => {
           Sign Up
         </Button>
         </div>
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
         <div className="password-strength-container">
           <div className="password-strength" style={{ color: passwordColor }}>
             Password Strength: {passwordStrength === 0 && "Weak"}
@@ -229,10 +219,7 @@ const Register = () => {
             {passwordStrength === 4 && "Strong"}
           </div>
         </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 0a758a2ff1cf6ac943d333ac1928201d37439a23
       </form>
       <h4>{message && message}</h4>
     </div>
