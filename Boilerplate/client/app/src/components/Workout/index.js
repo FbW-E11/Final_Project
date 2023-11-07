@@ -38,7 +38,7 @@ function Workout() {
         <DumbbellIcon fontSize="large" className="gym-icon" style={{ fontSize: 50 }} />
 
 
-        <h1 className="header-title">Welcome to My Fitness Website</h1>
+        <h1 className="header-title"> Welcome to BeFit </h1>
         <p className="header-description">
           Your one-stop destination for fitness and wellness.
         </p>
@@ -190,7 +190,7 @@ function Workout() {
           </a>
         </div>
 
-        <p>&copy; 2023 BeFit Fitness App</p>
+        <p>&copy; 2023 BeFit </p>
       </footer>
     </div>
   );

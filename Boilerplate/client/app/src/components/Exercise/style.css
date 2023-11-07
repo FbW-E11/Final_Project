@@ -124,17 +124,8 @@ button:disabled {
     border-radius: 5px;
     font-size: 18px;
     color: #333;
-    transition: border-color 0.3s ease; /* Add a transition for smooth hover effect */
+    transition: border-color 0.3s ease; 
     margin-left: 80px;
-    /* Define hover styles */
-    &:hover {
-      border-color: blue; /* Change border color to black on hover */
-      /* Add other styles for the hover effect */
-      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    }
-  }
-
-  ul.list-cont {
     list-style: none;
     padding: 0;
     display: flex;
@@ -147,9 +138,9 @@ button:disabled {
     flex: 1;
     margin: 10px;
     font-size: 23px;
-    font-weight: bold; /* Set font weight to bold */
-    text-align: center; /* Center the text horizontally */
-    text-transform: uppercase; /* Convert text to uppercase */
+    font-weight: bold; 
+    text-align: center; 
+    text-transform: uppercase; 
   }
 
   img {
@@ -162,14 +153,14 @@ button:disabled {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     background-color: #fff;
     opacity: 1;
-    transform: scale(1.1); /* Scale the image up by 10% on hover */
+    transform: scale(1.1); 
   }
 
   img:hover {
-    transform: scale(1.2); /* Scale the image up on hover */
-    border: 2px solid white; /* Change the border color on hover (pink in this case) */
-    box-shadow: 0 0 10px white; /* Change the box shadow on hover */
-    opacity: 0.8; /* Reduce opacity on hover to 80% */
+    transform: scale(1.2); 
+    border: 2px solid white; 
+    box-shadow: 0 0 10px white;
+    opacity: 0.8; 
     cursor: pointer;
     
   }
