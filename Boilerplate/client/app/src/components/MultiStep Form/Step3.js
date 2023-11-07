@@ -1,4 +1,5 @@
 import React from 'react';
+import "./style.css";
 const Step3 = ({ formData, setFormData, prevStep }) => {
   const { muscleType, dietHabits, sleepingHabits } = formData;
   const handleChange = (e) => {
@@ -6,9 +7,9 @@ const Step3 = ({ formData, setFormData, prevStep }) => {
   };
   return (
     <div>
-      <h2>Step 3: Additional Information</h2>
-      <form>
-        <label htmlFor="muscleType">Muscle Type:</label>
+      <h2> Additional Required Information</h2>
+      <form className='glassformic'>
+        <label className='muscle-container' htmlFor="muscleType">Muscle Type:</label>
         <select
           id="muscleType"
           name="muscleType"
@@ -19,9 +20,9 @@ const Step3 = ({ formData, setFormData, prevStep }) => {
           <option value="Mesomorph">Mesomorph</option>
           <option value="Ectomorph">Ectomorph</option>
         </select>
-        <label htmlFor="dietHabits">Diet Habits:</label>
+        <label className='muscle-container' htmlFor="dietHabits">Diet Habits:</label>
         <select
-          id="Diet Habits"
+          id="muscleType"
           name="Diet Habits"
           value={dietHabits}
           onChange={handleChange}
@@ -30,9 +31,9 @@ const Step3 = ({ formData, setFormData, prevStep }) => {
           <option value="Vegetarian">Vegetarian</option>
           <option value="Vegan">Vegan</option>
         </select>
-        <label htmlFor="sleepingHabits">Sleeping Habits:</label>
+        <label className='muscle-container' htmlFor="sleepingHabits">Sleeping Habits:</label>
         <select
-          id="sleepingHabits"
+          id="muscleType"
           name="sleepingHabits"
           value={sleepingHabits}
           onChange={handleChange}

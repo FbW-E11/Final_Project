@@ -1,4 +1,5 @@
 
+
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import "../Exercise/style.css";
@@ -33,7 +34,7 @@ const MuscleComponent = () => {
   }, []);
 
   return (
-    <div>
+    <div className="main-container">
       {exerciseData && (
         <div>
           <div>
@@ -99,6 +100,7 @@ const MuscleComponent = () => {
           ))}
         </div>
       )}
+      
     </div>
   );
 };
