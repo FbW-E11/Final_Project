@@ -31,12 +31,13 @@ const Step1 = ({ formData, setFormData, nextStep }) => {
       <button onClick={calculateBMI}>Calculate BMI</button>
       {bmi && (
         <div>
-          <p>Your BMI is: {bmi.toFixed(2)}</p>
-          <p>BMI Categories:</p>
-          <p>Underweight: less than 18.5</p>
-          <p>Normal weight: 18.5 - 24.9</p>
-          <p>Overweight: 25 - 29.9</p>
-          <p>Obese: 30 or greater</p>
+        <p style={{fontSize:"25px"}} >BMI Categories:</p>
+          <p style={{fontSize:"23px"}} >Underweight: less than 18.5</p>
+          <p style={{fontSize:"23px"}} >Normal weight: 18.5 - 24.9</p>
+          <p style={{fontSize:"23px"}} >Overweight: 25 - 29.9</p>
+          <p style={{fontSize:"23px"}} >Obese: 30 or greater</p>
+          <p style={{fontSize:"35px" , color:"orange",}} ><strong>Your BMI is: {bmi.toFixed(2)}</strong></p>
+
         </div>
       )}
       <button onClick={nextStep}>Gender</button>

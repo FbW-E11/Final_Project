@@ -12,11 +12,11 @@ body {
 
 /* Form styles */
 form {
- /*  width: 800px; */
+  /*  width: 800px; */
 
   background-color: rgba(260, 259, 259, 0.075);
   position: absolute;
-  top: 50%;
+  top: 68%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
@@ -24,11 +24,11 @@ form {
   border: 2px solid rgba(247, 243, 243, 0.1);
   box-shadow: 0 0 40px rgba(13, 15, 26, 0.9);
 
- /*  padding: 50px 35px; */
+  /*  padding: 50px 35px; */
 }
 
 form h3 {
-/*   font-size: 2rem;
+  /*   font-size: 2rem;
   font-weight: 500;
   line-height: 42px;
   text-align: center; */
@@ -40,7 +40,7 @@ form h3 {
 }
 
 .formedLabel {
- /*  height: 25px; */
+  /*  height: 25px; */
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -48,7 +48,7 @@ form h3 {
 .commonInput {
   width: 100%;
   padding: 10px;
- /*  border: 1px solid #faf8f8; */
+  /*  border: 1px solid #faf8f8; */
   border-radius: 5px;
   font-size: 18px;
 }
@@ -60,9 +60,9 @@ button[type="submit"] {
   margin-right: 20px; /* Add margin between buttons */
   padding: 10px;
 
-  background-color: #007bff;
+  background-color: rgb(26, 118, 210);
   color: #fff;
-  
+
   border: none;
   border-radius: 5px;
   font-size: 18px;
@@ -71,7 +71,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: rgb(6, 98, 189);
 }
 
 /* Label and input styles */
@@ -84,14 +84,13 @@ label {
 
 input[type="email"],
 input[type="password"] {
-
   width: 50%;
   height: 50px;
   padding: 0 10px;
   border-radius: 5px;
   font-size: 18px;
-  /* color: black; */
   font-weight: 300;
+  
 }
 
 /* Sign button styles */
