@@ -95,7 +95,7 @@ const Login = ({ setUser }) => {
               <Button variant="contained">
                 <Link
                   to="/register"
-                  style={{ textDecoration: "none", color: "white" }}
+                  style={{ textDecoration: "none", color: "white", fontSize:"18px",}}
                 >
                   SignUp
                 </Link>

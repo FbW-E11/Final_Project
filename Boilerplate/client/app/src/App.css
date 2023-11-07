@@ -1,5 +1,7 @@
 body {
-  font-family: Arial,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+ font-family: Arial,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+ font-size: 18px;
+ font-weight: bold;
   margin: 0;
   padding: 0;
   display: flex;
@@ -29,7 +31,7 @@ body {
       .header h1 {
         font-size: 36px;
         margin: 0;
-        color: #FFE3E0;
+        color: orange;
         letter-spacing: 0.1em;
         text-shadow: 0 -1px 0 #fff, 0 1px 0 #2E2E2E, 0 2px 0 #2C2C2C, 0 3px 0 #2A2A2A,
           0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
@@ -40,24 +42,26 @@ body {
 
       .header p {
         font-size: 18px;
-        color: #780116;
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px white,
-          0 0 30px #FFE3E0, 0 0 40px #49FF18, 0 0 55px #FFE3E0, 0 0 75px white;
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 15px #fff, 0 0 10px white,
+           0 0 40px white;
       }
 
       /* Navbar styles */
   .navbar {
     position: fixed;
-    background: pink;
+    background: orange;
     font-weight: 400;
     font-size: 0;
     display: flex;
     padding: 10px 0;
     width: 100%;
+    height: 100px;
     top: 0;
     left: 0;
     right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 0px;
     z-index: 100;
     padding-left: 800px;
@@ -80,6 +84,9 @@ body {
     line-height: 50px;
     text-align: center;
     list-style: none;
+    margin-top: 30px;
+
+    
     /*margin-left: 180px;*/
 }
 
@@ -99,23 +106,28 @@ h3 {
 }
 p {
   margin-bottom: 15px;
+  
 }
 
 .next-button {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: #333;
+  background-color:orange;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
+.next-button:hover {
+  background-color: rgb(247, 182, 63);
+}
 
 .nav-list li {
   display: inline;
   margin: 50px;
+  
 }
 
 .nav-list a {
@@ -123,6 +135,7 @@ p {
   color: #780116;
   font-size: 16px;
   transition: color 0.3s;
+  
 }
 
 .nav-list a:hover {
@@ -131,9 +144,11 @@ p {
 
 .gym-icon {
   margin-right:0 10px;
-  color: yellow;
-  font-size: 54px;
+  color: orange;
+  font-size: 64px;
   margin-top: 15px;
+  margin-bottom: 45px;
+
 }
 
 .content-container {
@@ -144,7 +159,7 @@ p {
   font-size: 24px;
   margin-bottom: 20px;
   margin-left: 20px;
-  color: #EF476F;
+  color: orange;
   text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
     rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
 }
@@ -170,24 +185,19 @@ p {
 .testimonial-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #EF476F;
+  color: orange;
   text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
     rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
 }
 
 .testimonial-container h3 {
-  color: yellow;
+  color: orange;
 }
 .testimonial-container p {
   color: white;
 }
 
-/* .user-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-} */
+
 
 .contact-container {
   margin-top: 40px;
@@ -197,7 +207,7 @@ p {
 .contact-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #EF476F;
+  color: orange;
   text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
     rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
 }
@@ -210,6 +220,7 @@ p {
 }
 .nav-list li {
   margin: 0 10px;
+  
 }
 @keyframes shake {
   0% { transform: translateX(0); }
@@ -227,7 +238,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #FFE3E0;
+  background-color: orange;
   padding: 25px 15px;
   color: #780116;
   text-align: center;
@@ -243,17 +254,10 @@ p {
   gap: 20px;
   font-size: 24px;
 }
-/* .social-icons a {
-  text-decoration: none;
-  color: #780116;
-  transition: color 0.3s;
-} */
-/* .social-icons a:hover {
-  color: #EEDDAA;
-} */
+
 .social-icons a {
   text-decoration: none;
-  color: #780116;
+  color: white;
   font-size: 24px;
   transition: transform 0.2s, color 0.3s;
 }
@@ -268,16 +272,3 @@ p {
     margin-left: 20px;
   }
 }
-.nav-list li {
-  margin: 0 10px;
-}
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
-.shake {
-  animation: shake 0.5s;
-  }

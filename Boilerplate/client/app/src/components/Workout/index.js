@@ -9,6 +9,26 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import DumbbellIcon from "@mui/icons-material/FitnessCenter";
+import {
+  CheckCircleOutline,
+  DirectionsRun,
+  FitnessCenter,
+  Group,
+  Fastfood,
+  BookOnline,
+  Elderly,
+  Speed,
+  SportsMma,
+  SportsMotorsports,
+  HolidayVillage,
+  Nightlife,
+  QueueMusic,
+  SelfImprovement,
+  EmojiPeople,
+} from "@mui/icons-material";
+const orangeIconStyle = {
+  color: 'orange',
+};
 
 function Workout() {
   const navigate = useNavigate();
@@ -17,7 +37,6 @@ function Workout() {
   };
   return (
     <div className="app-container">
-      
       <header className="header">
         <nav className="navbar">
           <ul className="nav-list">
@@ -35,126 +54,162 @@ function Workout() {
             </li>
           </ul>
         </nav>
-        <DumbbellIcon fontSize="large" className="gym-icon" style={{ fontSize: 50 }} />
+        <DumbbellIcon
+          fontSize="large"
+          className="gym-icon"
+          style={{ fontSize: 50 }}
+        />
 
-
-        <h1 className="header-title">Welcome to My Fitness Website</h1>
+        <h1 className="header-title">Welcome to BeFit</h1>
         <p className="header-description">
           Your one-stop destination for fitness and wellness.
         </p>
       </header>
       <main>
-        <div className="content-container" >
+        <div className="content-container">
           <h2>Our Services</h2>
-          <p>Explore a wide range of fitness services, including:</p>
+          <p>
+          <strong style={{ fontSize: '1.3em' }}>
+            Explore a wide range of fitness services, including:
+          </strong>
+        </p>
           <ul>
-            <li>
-              Cardio exercises: Get your heart pumping and improve your
-              cardiovascular health with our range of cardio workouts.
-            </li>
-            <br />
-            <li>
-              Strength training: Build muscle, increase your metabolism, and
-              boost your strength with our strength training programs.
-            </li>
-            <br />
-            <li>
-              Yoga and flexibility exercises: Enhance your flexibility, balance,
-              and inner calm with our yoga classes suitable for all levels.
-            </li>
-            <br />
-            <li>
-              Group fitness classes: Join our dynamic group classes led by
-              experienced instructors, creating a fun and motivating environment
-              for all fitness levels.
-            </li>
-            <br />
-            <li>
-              Personalized coaching: Receive one-on-one coaching from our expert
-              trainers, tailored to your unique fitness goals and needs.
-            </li>
-            <br />
-          </ul>
+    <li>
+      <DirectionsRun style={orangeIconStyle} /> Cardio exercises
+    </li>
+    <li>
+      <SportsMma style={orangeIconStyle} /> Strength training
+    </li>
+    <li>
+      <Group style={orangeIconStyle} /> Group fitness classes
+    </li>
+    <li>
+      <Fastfood style={orangeIconStyle} /> Nutrition Guidance
+    </li>
+    <li>
+      <BookOnline style={orangeIconStyle} /> Online Workouts
+    </li>
+    <li>
+      <EmojiPeople style={orangeIconStyle} /> Body Transformation Challenges
+    </li>
+    <li>
+      <Elderly style={orangeIconStyle} /> Senior Fitness Programs
+    </li>
+    <li>
+      <DumbbellIcon style={orangeIconStyle} /> Weightlifting
+    </li>
+    <li>
+      <Speed style={orangeIconStyle} /> High-Intensity Interval Training (HIIT)
+    </li>
+    <li>
+      <SelfImprovement style={orangeIconStyle} /> Yoga and flexibility exercises
+    </li>
+    <li>
+      <QueueMusic style={orangeIconStyle} /> Zumba
+    </li>
+    <li>
+      <SportsMotorsports style={orangeIconStyle} /> Kickboxing
+    </li>
+    <li>
+      <HolidayVillage style={orangeIconStyle} /> Boot Camp Workouts
+    </li>
+  </ul>
         </div>
         <div className="testimonial-container">
-          
-        <MultiStepForm />
+          <MultiStepForm />
+          <br />
 
           <h2 id="about">About Us</h2>
+          <br />
+
           <p>
-            We are a dedicated team of fitness enthusiasts who are passionate
-            about helping you achieve your fitness goals. Our mission is to
-            provide you with the tools and knowledge you need to live a healthy
-            and active lifestyle.
+            <strong>
+              We are a dedicated team of fitness enthusiasts who are passionate
+              about helping you achieve your fitness goals. Our mission is to
+              provide you with the tools and knowledge you need to live a
+              healthy and active lifestyle.
+            </strong>
           </p>
           <ul>
             <li>
-              Nutrition Guidance: We believe that what you eat is just as
-              important as how you train. Our nutrition experts can help you
-              make informed dietary choices tailored to your goals.
+              <strong>Nutrition Guidance:</strong> We believe that what you eat
+              is just as important as how you train. Our nutrition experts can
+              help you make informed dietary choices tailored to your goals.
             </li>
             <br />
             <li>
-              Mental Health Support: Achieving your fitness goals isn't just
-              about your body; it's about your mind as well. We offer resources
-              and support to help you manage stress, build resilience, and
-              maintain a positive outlook.
+              <strong>Mental Health Support:</strong> Achieving your fitness
+              goals isn't just about your body; it's about your mind as well. We
+              offer resources and support to help you manage stress, build
+              resilience, and maintain a positive outlook.
             </li>
             <br />
             <li>
-              Community: Joining My Fitness Website means becoming a part of a
-              supportive fitness community. You'll connect with fellow members
-              who share your passion and motivation.
+              <strong>Community:</strong> Joining My Fitness Website means
+              becoming a part of a supportive fitness community. You'll connect
+              with fellow members who share your passion and motivation.
             </li>
             <br />
             <li>
-              Inspiration and Motivation: We understand that maintaining a
-              fitness routine can be challenging. That's why we regularly share
-              success stories and inspiration to keep you motivated on your
-              journey.
+              <strong>Inspiration and Motivation:</strong> We understand that
+              maintaining a fitness routine can be challenging. That's why we
+              regularly share success stories and inspiration to keep you
+              motivated on your journey.
             </li>
             <br />
           </ul>
+
           <h3>Our Team</h3>
           <p>
-            Our team consists of highly qualified fitness trainers,
-            nutritionists, and mental health experts. They bring a wealth of
-            experience to help you achieve your fitness goals. We believe in
-            continuous learning and staying up-to-date with the latest trends in
-            fitness and wellness. Our trainers are passionate about guiding you
-            to success, no matter your starting point.
+            <strong>
+              Our team consists of highly qualified fitness trainers,
+              nutritionists, and mental health experts. They bring a wealth of
+              experience to help you achieve your fitness goals. We believe in
+              continuous learning and staying up-to-date with the latest trends
+              in fitness and wellness. Our trainers are passionate about guiding
+              you to success, no matter your starting point.
+            </strong>
           </p>
 
           <h3>Your Fitness Journey</h3>
           <p>
-            Whether you're looking to lose weight, build muscle, increase
-            flexibility, or just lead a healthier lifestyle, My Fitness Website
-            is here for you. We tailor our programs to fit your unique needs. No
-            two fitness journeys are the same, and we celebrate your
-            individuality.
-          </p>
-
-          <p>
-            Join us today, and let's embark on a transformative fitness journey
-            together. Your success is our success, and we're excited to be part
-            of your story.
+            <strong>
+              Whether you're looking to lose weight, build muscle, increase
+              flexibility, or just lead a healthier lifestyle, My Fitness
+              Website is here for you. We tailor our programs to fit your unique
+              needs. No two fitness journeys are the same, and we celebrate your
+              individuality.
+            </strong>
           </p>
           <p>
-            With years of experience in the fitness industry, our trainers and
-            experts are here to guide you on your fitness journey. We offer a
-            variety of programs and services to cater to all fitness levels and
-            goals.
+            <strong>
+              Join us today, and let's embark on a transformative fitness
+              journey together. Your success is our success, and we're excited
+              to be part of your story.
+            </strong>
           </p>
           <p>
-            At My Fitness Website, we believe that everyone deserves the
-            opportunity to live a healthier life. Whether you are just starting
-            your fitness journey or looking to take your training to the next
-            level, we are here to support you every step of the way.
+            <strong>
+              With years of experience in the fitness industry, our trainers and
+              experts are here to guide you on your fitness journey. We offer a
+              variety of programs and services to cater to all fitness levels
+              and goals.
+            </strong>
           </p>
           <p>
-            Join us and be a part of our fitness community. Let's work together
-            to transform your health and well-being. Your success is our
-            success.
+            <strong>
+              At My Fitness Website, we believe that everyone deserves the
+              opportunity to live a healthier life. Whether you are just
+              starting your fitness journey or looking to take your training to
+              the next level, we are here to support you every step of the way.
+            </strong>
+          </p>
+          <p>
+            <strong>
+              Join us and be a part of our fitness community. Let's work
+              together to transform your health and well-being. Your success is
+              our success.
+            </strong>
           </p>
         </div>
         <button
@@ -190,7 +245,7 @@ function Workout() {
           </a>
         </div>
 
-        <p>&copy; 2023 My Fitness Website</p>
+        <p>&copy; 2023 BeFit</p>
       </footer>
     </div>
   );
