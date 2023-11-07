@@ -68,7 +68,7 @@ form input[type="text"] {
   color: white;
 }
 form * {
-  color: #fff;
+  color: black;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
@@ -94,7 +94,7 @@ input[type="password"] {
   width: 100%;
   border-radius: 5px;
   font-size: 16px;
-  color: w;
+  color: white;
   display: block;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.07);
@@ -139,7 +139,7 @@ input[type="password"] {
 /* Add animation to navigation links when clicked */
 .navbar a {
   text-decoration: none;
-  color: #fff;
+  color: white;
   margin: 0 15px;
   font-weight: bold;
   position: relative; /* Add relative positioning for pseudo-element */
@@ -152,13 +152,13 @@ input[type="password"] {
   left: 0;
   width: 100%;
   height: 2px; /* Adjust the line height */
-  background-color: #F1E6E6;
+  background-color: #d80b0b;
   transform: scaleX(0); /* Initial transform value for the line */
   transform-origin: right;
   transition: transform 0.3s ease; /* Add transition for the line */
 }
 .navbar a:hover {
-  color: #4D2BE2;
+  color: #a0042b;
 }
 .navbar a:hover::before {
   transform: scaleX(1); /* Expand the line when the link is hovered */
@@ -174,3 +174,4 @@ input[type="password"] {
     font-size: 0.8rem;
   }
 }
+
