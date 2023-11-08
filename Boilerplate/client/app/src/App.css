@@ -154,7 +154,6 @@ p {
 .content-container {
   margin-top: 40px;
 }
-
 .content-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -163,14 +162,12 @@ p {
   text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
     rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
 }
-
 .content-container p {
   font-size: 16px;
   margin-left: 20px;
   color: #FFEEDD;
   text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
 }
-
 .content-container li {
   color: white;
   margin-left: 20px;
@@ -181,7 +178,6 @@ p {
   margin-left: 20px;
   color: white;
 }
-
 .testimonial-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -189,7 +185,6 @@ p {
   text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
     rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
 }
-
 .testimonial-container h3 {
   color: orange;
 }
@@ -203,7 +198,6 @@ p {
   margin-top: 40px;
   margin-left: 20px;
 }
-
 .contact-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -211,7 +205,6 @@ p {
   text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
     rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
 }
-
 .contact-container p {
   font-size: 16px;
   margin-left: 20px;
@@ -248,7 +241,6 @@ p {
   position: sticky;
   width: 100%;
 }
-
 .social-icons {
   display: flex;
   gap: 20px;

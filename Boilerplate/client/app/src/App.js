@@ -4,6 +4,7 @@ import Workout from "./components/Workout/index";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import MuscleComponent from "./components/Exercise/Muscle";
+import LogoutComponent from "./components/Logout"; // Import your LogoutComponent
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
       <Route path="/home" element={<Home />}></Route>
 
       <Route path="/exercise/muscle" element={<MuscleComponent />}></Route>
+      <Route path="/" element={<LogoutComponent />} /> {/* Add the logout route */}
+
     </Routes>
   );
 }
