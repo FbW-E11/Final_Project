@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import "../Login/style.css";
+import "./style.css";
 import { useNavigate, Link } from "react-router-dom";
 import {
   Button,
@@ -23,7 +23,7 @@ const Login = ({ setUser }) => {
 
   const loginUser = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:5002/login`, data, {
+      const response = await axios.post(`http://localhost:5001/login`, data, {
         withCredentials: true,
       });
       return response.data; // Return data from the response, not the entire response object
@@ -52,6 +52,7 @@ const Login = ({ setUser }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="formGroup">
             <TextField
+         
               id="filled-basic"
               variant="filled"
               placeholder="email"
