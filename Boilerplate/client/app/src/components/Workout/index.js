@@ -246,6 +246,7 @@ function Workout() {
         </div>
 
         <p>&copy; 2023 BeFit</p>
+
       </footer>
     </div>
   );
