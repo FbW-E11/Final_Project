@@ -163,6 +163,7 @@ const MuscleComponent = () => {
     </div>
   );
 };
+
  export default MuscleComponent; 
 
  
