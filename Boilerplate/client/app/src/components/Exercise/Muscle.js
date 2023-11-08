@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 40e195a0dcbbf579bc57e7622b505f557bb65ae9
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import "../Exercise/style.css";
@@ -166,10 +163,7 @@ const MuscleComponent = () => {
     </div>
   );
 };
-<<<<<<< HEAD
-export default MuscleComponent;
-=======
+
  export default MuscleComponent; 
 
  
->>>>>>> 40e195a0dcbbf579bc57e7622b505f557bb65ae9
