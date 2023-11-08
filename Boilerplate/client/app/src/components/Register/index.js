@@ -17,7 +17,7 @@ const Register = () => {
   const [passwordColor, setPasswordColor] = useState("red");
   const SignUpUser = async (data) => {
     try {
-      const response = await axios.post("http://localhost:5002/register", data);
+      const response = await axios.post("http://localhost:5001/register", data);
       if (response.data) {
         return response.data;
       } else {
