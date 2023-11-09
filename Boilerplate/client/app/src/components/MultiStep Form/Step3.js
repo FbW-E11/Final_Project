@@ -1,5 +1,5 @@
 import React from 'react';
-import "./style.css";
+
 const Step3 = ({ formData, setFormData, prevStep }) => {
   const { muscleType, dietHabits, sleepingHabits } = formData;
   const handleChange = (e) => {
@@ -8,7 +8,7 @@ const Step3 = ({ formData, setFormData, prevStep }) => {
   return (
     <div>
       <h2> Additional Required Information</h2>
-      <form className='glassformic'>
+      <form>
         <label className='muscle-container' htmlFor="muscleType">Muscle Type:</label>
         <select
           id="muscleType"
