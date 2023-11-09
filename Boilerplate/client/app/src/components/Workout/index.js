@@ -145,9 +145,7 @@ function Workout() {
             </li>
             <br />
             <li>
-              <strong>Community:</strong> Joining My Fitness Website means
-              becoming a part of a supportive fitness community. You'll connect
-              with fellow members who share your passion and motivation.
+            <strong>Community:</strong> Joining BeFit means becoming a part of a supportive fitness community. You'll connect with fellow members who share your passion and motivation.
             </li>
             <br />
             <li>
@@ -173,21 +171,9 @@ function Workout() {
 
           <h3>Your Fitness Journey</h3>
           <p>
-            <strong>
-              Whether you're looking to lose weight, build muscle, increase
-              flexibility, or just lead a healthier lifestyle, My Fitness
-              Website is here for you. We tailor our programs to fit your unique
-              needs. No two fitness journeys are the same, and we celebrate your
-              individuality.
-            </strong>
+          <strong> Whether you're looking to lose weight, build muscle, increase flexibility, or just lead a healthier lifestyle, BeFit is here for you. We tailor our programs to fit your unique needs. No two fitness journeys are the same, and we celebrate your individuality. </strong>
           </p>
-          <p>
-            <strong>
-              Join us today, and let's embark on a transformative fitness
-              journey together. Your success is our success, and we're excited
-              to be part of your story.
-            </strong>
-          </p>
+          
           <p>
             <strong>
               With years of experience in the fitness industry, our trainers and
@@ -198,7 +184,7 @@ function Workout() {
           </p>
           <p>
             <strong>
-              At My Fitness Website, we believe that everyone deserves the
+              At BeFit, we believe that everyone deserves the
               opportunity to live a healthier life. Whether you are just
               starting your fitness journey or looking to take your training to
               the next level, we are here to support you every step of the way.

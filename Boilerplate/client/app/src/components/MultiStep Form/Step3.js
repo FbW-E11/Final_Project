@@ -1,5 +1,4 @@
 import React from 'react';
-
 const Step3 = ({ formData, setFormData, prevStep }) => {
   const { muscleType, dietHabits, sleepingHabits } = formData;
   const handleChange = (e) => {
