@@ -8,12 +8,12 @@ const ExerciseSchema = new Schema({
   equipment: {
     type: String,
     required: true,
-    enum: ["dumbbell", "ropes", "bars", "barbell", "kettlebell","bodyweight","Bench Press",]
+    enum: ["dumbbell", "ropes", "bars", "barbell", "kettlebell","bodyweight","Bench Press","Treadmill"]
   },
   muscle: {
     type: String,
     required: true,
-    enum: ["triceps", "biceps", "quadriceps", "abs", "hamstring"],
+    enum: ["triceps", "biceps","full-body", "quadriceps", "abs", "hamstring","Bigger Back Workout"]
   },
   fitness_level: {
     type: String,
@@ -33,6 +33,13 @@ const ExerciseSchema = new Schema({
     type: String,
     required: true,
   },
+  exerciseType:{
+    type :String,
+    required:true,
+    enum:[
+      "Cardio Exercise","Chest Exercise","Bench Press","Deadlifts","Bodyweight Squats","Burpees","Deadlifts","Leg Raises","dumbbell Rows","dumbbell Bicep Curls","Push-Ups","Plank","Bigger Back Workout","full-workout",
+    ]
+  }
 });
 
 const Exercise = model("Exercise", ExerciseSchema);

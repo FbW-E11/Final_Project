@@ -2,8 +2,7 @@ h2 {
   font-size: 28px;
   margin-bottom: 20px;
   color: orange;
-  text-shadow: rgba(81, 52, 21, 0.8) 3px 0px 7px,
-    rgba(81, 52, 21, 0.8) -3px 0px 7px, rgba(81, 52, 21, 0.8) 0px 4px 7px;
+  
 }
 
 form {
@@ -72,9 +71,10 @@ button:disabled {
 }
 
 .font {
-  font-size: 38px;
+  font-size: 5rem;
+  
   color: orange; /* Pink color */
-  text-shadow: 2px 2px 4px rgba(81, 52, 21, 0.8);
+  
   text-align: center;
   line-height: 1.5;
   display: flex;
@@ -117,12 +117,7 @@ input[type="text"] {
   color: white;
   transition: border-color 0.3s ease; /* Add a transition for smooth hover effect */
   margin-left: 80px;
-  /* Define hover styles */
-  &:hover {
-    border-color: orange; /* Change border color to black on hover */
-    /* Add other styles for the hover effect */
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  }
+ 
 }
 
 ul.list-cont {

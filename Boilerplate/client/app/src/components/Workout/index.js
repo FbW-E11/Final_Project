@@ -245,12 +245,8 @@ function Workout() {
           </a>
         </div>
 
-<<<<<<< HEAD
-        <p>&copy; 2023 BeFit </p>
-=======
         <p>&copy; 2023 BeFit</p>
 
->>>>>>> 78f8c1df2cfcdbfb4f6ec28629e584d12b7b1df9
       </footer>
     </div>
   );
