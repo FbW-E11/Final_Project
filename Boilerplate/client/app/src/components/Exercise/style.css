@@ -1,3 +1,4 @@
+
 h2 {
   font-size: 28px;
   margin-bottom: 20px;
@@ -135,7 +136,6 @@ ul.list-cont {
 }
 
 ul.list-cont li {
-  
   flex: 1;
   margin: 10px;
   font-size: 20px;
@@ -198,17 +198,43 @@ img:hover {
   /* Additional styling properties like text-align and font family can be adjusted to your preference */
 }
 
-
 /*.position-align {
   justify-content: center;
   align-items: center;
 }*/
-ul.list-cont.position-align{
+ul.list-cont.position-align {
   margin: 20px;
   width: 50%;
   border: 3px solid green;
   padding: 10px;
 }
+
+/* MuscleComponent.css */
+.logout-button {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  float: right;
+  margin-right: 25px;
+  transition: background-color 0.3s, transform 0.2s; /* Add a smooth transition effect for background and transform properties */
+  width: 100px;
+  background: rgba(255, 165, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the icon and text vertically and horizontally */
+}
+
+.logout-button:hover {
+  background-color: rgb(240, 177, 60);
+  transform: scale(1.1); /* Scale the button on hover for a subtle zoom effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a box shadow on hover for depth */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Apply transitions to all properties */
+}
+
 
 /* Styles for smaller screens (e.g., mobile devices) */
 @media (max-width: 768px) {
@@ -228,3 +254,4 @@ ul.list-cont.position-align{
     width: 95%; /* Further adjust width for very small screens */
   }
 }
+
